@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Service de l'application Backend Django
+  backend:
+    build: ./backend  # Indique à Compose de construire l'image à partir du Dockerfile dans le dossier ./backend
+    ports:
+      - "8000:8000"  # Lie le port 8000 du conteneur au port 8000 de votre machine locale
+    volumes:
+      - ./backend:/app  # Monte le dossier local ./backend dans le /app du conteneur pour le rechargement automatique du code
+    environment:
+      - DB_NAME=nexusflow_db
+      - DB_USER=nexusflow_user
+      - DB_PASSWORD=nexusflow_pass
+      - DB_HOST=db
+    command: python manage.py runserver 0.0.0.0:8000 # Commande pour démarrer le serveur de développement
+    depends_on:
+      - db  # Indique que le service backend dépend du service db et doit attendre qu'il soit prêt
+
+  # Service de la base de données PostgreSQL
+  db:
+    image: postgres:15-alpine # Utilise une image officielle et légère de PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/ # Crée un volume pour rendre les données persistantes
+    environment:
+      - POSTGRES_DB=nexusflow_db
+      - POSTGRES_USER=nexusflow_user
+      - POSTGRES_PASSWORD=nexusflow_pass
+    ports:
+      - "5432:5432" # Utile si vous souhaitez vous connecter à la BDD avec un outil externe
+
+volumes:
+  postgres_data: # Déclare le volume pour la persistance des données
