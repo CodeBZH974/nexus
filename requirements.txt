@@ -1,0 +1,11 @@
+# Framework web principal
+django==5.0.7
+
+# Pour créer des API RESTful
+djangorestframework==3.15.2
+
+# Adaptateur Python pour la base de données PostgreSQL
+psycopg2-binary==2.9.9
+
+# Pour charger les variables d'environnement depuis un fichier .env (utile pour la configuration)
+python-dotenv==1.0.1
