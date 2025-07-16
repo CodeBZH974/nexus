@@ -1,0 +1,1964 @@
+.
+├── LICENSE
+├── README.md
+├── backend
+│   ├── Dockerfile
+│   ├── entrypoint.sh
+│   ├── manage.py
+│   ├── nexusflow_api
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   ├── settings.cpython-311.pyc
+│   │   │   ├── urls.cpython-311.pyc
+│   │   │   └── wsgi.cpython-311.pyc
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── projects
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   ├── admin.cpython-311.pyc
+│   │   │   ├── apps.cpython-311.pyc
+│   │   │   ├── config.cpython-311.pyc
+│   │   │   ├── models.cpython-311.pyc
+│   │   │   ├── serializers.cpython-311.pyc
+│   │   │   ├── urls.cpython-311.pyc
+│   │   │   └── views.cpython-311.pyc
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── config.py
+│   │   ├── migrations
+│   │   │   ├── 0001_initial.py
+│   │   │   ├── __init__.py
+│   │   │   └── __pycache__
+│   │   │       ├── 0001_initial.cpython-311.pyc
+│   │   │       └── __init__.cpython-311.pyc
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   └── requirements.txt
+├── docker-compose.yml
+├── frontend
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── jsconfig.json
+│   ├── node_modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   └── aurora.svg
+│   ├── src
+│   │   ├── App.jsx
+│   │   ├── assets
+│   │   │   ├── audio
+│   │   │   │   ├── Akai_Namida_instrumental.ogg
+│   │   │   │   └── Triangle_instrumental.ogg
+│   │   │   ├── files
+│   │   │   │   └── verification_letter.pdf
+│   │   │   ├── images
+│   │   │   │   ├── avatar
+│   │   │   │   │   ├── avatar_1.webp
+│   │   │   │   │   ├── avatar_10.webp
+│   │   │   │   │   ├── avatar_11.webp
+│   │   │   │   │   ├── avatar_12.webp
+│   │   │   │   │   ├── avatar_13.webp
+│   │   │   │   │   ├── avatar_14.webp
+│   │   │   │   │   ├── avatar_15.webp
+│   │   │   │   │   ├── avatar_16.webp
+│   │   │   │   │   ├── avatar_2.webp
+│   │   │   │   │   ├── avatar_3.webp
+│   │   │   │   │   ├── avatar_4.webp
+│   │   │   │   │   ├── avatar_5.webp
+│   │   │   │   │   ├── avatar_6.webp
+│   │   │   │   │   ├── avatar_7.webp
+│   │   │   │   │   ├── avatar_8.webp
+│   │   │   │   │   ├── avatar_9.webp
+│   │   │   │   │   └── avatar_fallback.webp
+│   │   │   │   ├── chat
+│   │   │   │   │   ├── 1.webp
+│   │   │   │   │   ├── 2.webp
+│   │   │   │   │   ├── 3.webp
+│   │   │   │   │   ├── 4.webp
+│   │   │   │   │   ├── 5.webp
+│   │   │   │   │   ├── 6.webp
+│   │   │   │   │   └── 7.webp
+│   │   │   │   ├── crm
+│   │   │   │   │   ├── deal-details
+│   │   │   │   │   │   ├── aurora-logo.webp
+│   │   │   │   │   │   ├── logo.webp
+│   │   │   │   │   │   ├── onesuite-img.webp
+│   │   │   │   │   │   └── pug-img.webp
+│   │   │   │   │   └── deals
+│   │   │   │   │       ├── Logo1.webp
+│   │   │   │   │       ├── Logo2.webp
+│   │   │   │   │       ├── Logo3.webp
+│   │   │   │   │       ├── Logo4.webp
+│   │   │   │   │       ├── Logo5.webp
+│   │   │   │   │       ├── Logo6.webp
+│   │   │   │   │       ├── Logo7.webp
+│   │   │   │   │       ├── Logo8.webp
+│   │   │   │   │       └── Logo9.webp
+│   │   │   │   ├── docs
+│   │   │   │   │   └── lightbox
+│   │   │   │   │       ├── crab-beach.webp
+│   │   │   │   │       ├── flamingo.webp
+│   │   │   │   │       ├── last-night-two-week-stay-hawaii.webp
+│   │   │   │   │       ├── miami-beach.webp
+│   │   │   │   │       ├── puppy-in-sunglasses.webp
+│   │   │   │   │       ├── rayban-sunglasses.webp
+│   │   │   │   │       ├── starfish-on-a-sand-beach.webp
+│   │   │   │   │       └── sunset-on-kauai.webp
+│   │   │   │   ├── ecommerce
+│   │   │   │   │   ├── banners
+│   │   │   │   │   │   ├── banner_1.webp
+│   │   │   │   │   │   ├── banner_2.webp
+│   │   │   │   │   │   └── banner_3.webp
+│   │   │   │   │   ├── categories
+│   │   │   │   │   │   ├── category_1.webp
+│   │   │   │   │   │   ├── category_10.webp
+│   │   │   │   │   │   ├── category_11.webp
+│   │   │   │   │   │   ├── category_12.webp
+│   │   │   │   │   │   ├── category_2.webp
+│   │   │   │   │   │   ├── category_3.webp
+│   │   │   │   │   │   ├── category_4.webp
+│   │   │   │   │   │   ├── category_5.webp
+│   │   │   │   │   │   ├── category_6.webp
+│   │   │   │   │   │   ├── category_7.webp
+│   │   │   │   │   │   ├── category_8.webp
+│   │   │   │   │   │   └── category_9.webp
+│   │   │   │   │   ├── gallery
+│   │   │   │   │   │   ├── gallery_1.webp
+│   │   │   │   │   │   ├── gallery_2.webp
+│   │   │   │   │   │   └── gallery_3.webp
+│   │   │   │   │   └── products
+│   │   │   │   │       ├── 96x96
+│   │   │   │   │       │   ├── product_1.webp
+│   │   │   │   │       │   ├── product_10.webp
+│   │   │   │   │       │   ├── product_11.webp
+│   │   │   │   │       │   ├── product_12.webp
+│   │   │   │   │       │   ├── product_13.webp
+│   │   │   │   │       │   ├── product_14.webp
+│   │   │   │   │       │   ├── product_15.webp
+│   │   │   │   │       │   ├── product_2.webp
+│   │   │   │   │       │   ├── product_3.webp
+│   │   │   │   │       │   ├── product_4.webp
+│   │   │   │   │       │   ├── product_5.webp
+│   │   │   │   │       │   ├── product_6.webp
+│   │   │   │   │       │   ├── product_7.webp
+│   │   │   │   │       │   ├── product_8.webp
+│   │   │   │   │       │   └── product_9.webp
+│   │   │   │   │       ├── details
+│   │   │   │   │       │   ├── chestnut_1.webp
+│   │   │   │   │       │   ├── chestnut_2.webp
+│   │   │   │   │       │   ├── chestnut_3.webp
+│   │   │   │   │       │   ├── chestnut_4.webp
+│   │   │   │   │       │   ├── chestnut_5.webp
+│   │   │   │   │       │   ├── grey_1.webp
+│   │   │   │   │       │   ├── grey_2.webp
+│   │   │   │   │       │   ├── grey_3.webp
+│   │   │   │   │       │   ├── grey_4.webp
+│   │   │   │   │       │   ├── grey_5.webp
+│   │   │   │   │       │   ├── stain_1.webp
+│   │   │   │   │       │   ├── stain_2.webp
+│   │   │   │   │       │   ├── stain_3.webp
+│   │   │   │   │       │   ├── stain_4.webp
+│   │   │   │   │       │   ├── stain_5.webp
+│   │   │   │   │       │   └── stain_6.webp
+│   │   │   │   │       ├── product_1.webp
+│   │   │   │   │       ├── product_10.webp
+│   │   │   │   │       ├── product_11.webp
+│   │   │   │   │       ├── product_12.webp
+│   │   │   │   │       ├── product_13.webp
+│   │   │   │   │       ├── product_14.webp
+│   │   │   │   │       ├── product_15.webp
+│   │   │   │   │       ├── product_2.webp
+│   │   │   │   │       ├── product_3.webp
+│   │   │   │   │       ├── product_4.webp
+│   │   │   │   │       ├── product_5.webp
+│   │   │   │   │       ├── product_6.webp
+│   │   │   │   │       ├── product_7.webp
+│   │   │   │   │       ├── product_8.webp
+│   │   │   │   │       └── product_9.webp
+│   │   │   │   ├── file-manager
+│   │   │   │   │   ├── empty-highway.webp
+│   │   │   │   │   ├── foggy-road-in-the-middle-of-a-rural-area.webp
+│   │   │   │   │   ├── gray-asphalt-road-between-green.webp
+│   │   │   │   │   ├── grey-sofa.webp
+│   │   │   │   │   ├── long-exposure-photo.webp
+│   │   │   │   │   ├── man-standing-on-rock-mountain-during-daytime.webp
+│   │   │   │   │   ├── mount-fuji.webp
+│   │   │   │   │   ├── orange-plastic-armchair.webp
+│   │   │   │   │   ├── photography-of-seashore.webp
+│   │   │   │   │   ├── road-with-a-curve.webp
+│   │   │   │   │   ├── side-of-a-cliff.webp
+│   │   │   │   │   ├── white-car-with-a-red-light-behind.webp
+│   │   │   │   │   ├── wide-road-near-mountains-under-cloudy-sky.webp
+│   │   │   │   │   └── woman-jumping-in-gray-2-seat-sofa.webp
+│   │   │   │   ├── gallery
+│   │   │   │   │   ├── 1.webp
+│   │   │   │   │   ├── 2.webp
+│   │   │   │   │   ├── 3.png
+│   │   │   │   │   ├── 3.webp
+│   │   │   │   │   ├── 4.png
+│   │   │   │   │   ├── 4.webp
+│   │   │   │   │   ├── 5.png
+│   │   │   │   │   ├── 5.webp
+│   │   │   │   │   └── events
+│   │   │   │   │       ├── card-image-1.webp
+│   │   │   │   │       ├── card-image-2.webp
+│   │   │   │   │       ├── card-image-3.webp
+│   │   │   │   │       ├── concert.webp
+│   │   │   │   │       ├── concert2.webp
+│   │   │   │   │       ├── concert3.webp
+│   │   │   │   │       ├── concert4.webp
+│   │   │   │   │       ├── concert5.webp
+│   │   │   │   │       ├── concert6.webp
+│   │   │   │   │       ├── concert7.webp
+│   │   │   │   │       ├── concert8.webp
+│   │   │   │   │       └── concert9.webp
+│   │   │   │   ├── hrm
+│   │   │   │   │   └── profile-bg.webp
+│   │   │   │   ├── illustrations
+│   │   │   │   │   ├── 1.webp
+│   │   │   │   │   ├── 10.webp
+│   │   │   │   │   ├── 11-dark.webp
+│   │   │   │   │   ├── 11-light.webp
+│   │   │   │   │   ├── 12-dark.webp
+│   │   │   │   │   ├── 12-light.webp
+│   │   │   │   │   ├── 13.webp
+│   │   │   │   │   ├── 14-dark.webp
+│   │   │   │   │   ├── 14-light.webp
+│   │   │   │   │   ├── 15-dark.webp
+│   │   │   │   │   ├── 15-light.webp
+│   │   │   │   │   ├── 16-dark.webp
+│   │   │   │   │   ├── 16-light.webp
+│   │   │   │   │   ├── 17-dark.webp
+│   │   │   │   │   ├── 17-light.webp
+│   │   │   │   │   ├── 2.webp
+│   │   │   │   │   ├── 3-dark.webp
+│   │   │   │   │   ├── 3-light.webp
+│   │   │   │   │   ├── 4.webp
+│   │   │   │   │   ├── 6-dark.webp
+│   │   │   │   │   ├── 6-light.webp
+│   │   │   │   │   ├── 6.webp
+│   │   │   │   │   ├── 7.webp
+│   │   │   │   │   ├── 8-dark.webp
+│   │   │   │   │   ├── 8-light.webp
+│   │   │   │   │   ├── 9-dark.webp
+│   │   │   │   │   ├── 9-light.webp
+│   │   │   │   │   ├── bg-offer.webp
+│   │   │   │   │   ├── empty-folder-dark.webp
+│   │   │   │   │   ├── empty-folder-light.webp
+│   │   │   │   │   ├── file-not-selected-dark.webp
+│   │   │   │   │   ├── file-not-selected-light.webp
+│   │   │   │   │   ├── log.webp
+│   │   │   │   │   ├── multi-file-selected-dark.webp
+│   │   │   │   │   ├── multi-file-selected-light.webp
+│   │   │   │   │   ├── plant.webp
+│   │   │   │   │   ├── pricing-dark-1.webp
+│   │   │   │   │   ├── pricing-dark-2.webp
+│   │   │   │   │   ├── pricing-dark-3.webp
+│   │   │   │   │   ├── pricing-dark-4.webp
+│   │   │   │   │   ├── pricing-light-1.webp
+│   │   │   │   │   ├── pricing-light-2.webp
+│   │   │   │   │   ├── pricing-light-3.webp
+│   │   │   │   │   ├── pricing-light-4.webp
+│   │   │   │   │   ├── promo_bg.webp
+│   │   │   │   │   ├── promo_parachute.webp
+│   │   │   │   │   ├── support-faq-dark.webp
+│   │   │   │   │   ├── support-faq-light.webp
+│   │   │   │   │   ├── support_faq.webp
+│   │   │   │   │   └── tw-qr.webp
+│   │   │   │   ├── kanban
+│   │   │   │   │   ├── attachment.webp
+│   │   │   │   │   ├── bg-option-1.webp
+│   │   │   │   │   ├── bg-option-2.webp
+│   │   │   │   │   ├── bg-option-3.webp
+│   │   │   │   │   ├── bg-option-4.webp
+│   │   │   │   │   ├── bg-option-5.webp
+│   │   │   │   │   ├── bg-option-6.webp
+│   │   │   │   │   ├── bg-option-7.webp
+│   │   │   │   │   ├── bg-option-8.webp
+│   │   │   │   │   ├── board_images
+│   │   │   │   │   │   ├── 1.webp
+│   │   │   │   │   │   ├── 10.webp
+│   │   │   │   │   │   ├── 11.webp
+│   │   │   │   │   │   ├── 12.webp
+│   │   │   │   │   │   ├── 13.webp
+│   │   │   │   │   │   ├── 14.webp
+│   │   │   │   │   │   ├── 2.webp
+│   │   │   │   │   │   ├── 3.webp
+│   │   │   │   │   │   ├── 4.webp
+│   │   │   │   │   │   ├── 5.webp
+│   │   │   │   │   │   ├── 6.webp
+│   │   │   │   │   │   ├── 7.webp
+│   │   │   │   │   │   ├── 8.webp
+│   │   │   │   │   │   └── 9.webp
+│   │   │   │   │   ├── task1.webp
+│   │   │   │   │   ├── task2.webp
+│   │   │   │   │   ├── task3.webp
+│   │   │   │   │   ├── task4.webp
+│   │   │   │   │   ├── task5.webp
+│   │   │   │   │   ├── task6.webp
+│   │   │   │   │   ├── task7.webp
+│   │   │   │   │   ├── task8.webp
+│   │   │   │   │   └── task9.webp
+│   │   │   │   ├── logo
+│   │   │   │   │   ├── 32x32
+│   │   │   │   │   │   ├── google.webp
+│   │   │   │   │   │   └── microsoft.webp
+│   │   │   │   │   ├── adidas.webp
+│   │   │   │   │   ├── alligator.webp
+│   │   │   │   │   ├── amazon_logo.webp
+│   │   │   │   │   ├── american_express_logo.webp
+│   │   │   │   │   ├── apple_device_logo.webp
+│   │   │   │   │   ├── apple_logo.webp
+│   │   │   │   │   ├── check.webp
+│   │   │   │   │   ├── check_mark.webp
+│   │   │   │   │   ├── chrome_logo.webp
+│   │   │   │   │   ├── discover_logo.webp
+│   │   │   │   │   ├── google_logo.webp
+│   │   │   │   │   ├── h_m.webp
+│   │   │   │   │   ├── harvard_logo.webp
+│   │   │   │   │   ├── head_mead.webp
+│   │   │   │   │   ├── kumir.webp
+│   │   │   │   │   ├── mailbluster_logo.webp
+│   │   │   │   │   ├── mastercard_logo.webp
+│   │   │   │   │   ├── microsoft_device_logo.webp
+│   │   │   │   │   ├── ndc_logo.webp
+│   │   │   │   │   ├── paypal_logo.webp
+│   │   │   │   │   ├── stripes.webp
+│   │   │   │   │   ├── technext_logo.webp
+│   │   │   │   │   ├── themewagon_logo.webp
+│   │   │   │   │   └── visa_logo.webp
+│   │   │   │   ├── sections
+│   │   │   │   │   ├── accounts-page
+│   │   │   │   │   │   ├── accessibility
+│   │   │   │   │   │   │   ├── blue-tick.png
+│   │   │   │   │   │   │   ├── blue-tick.webp
+│   │   │   │   │   │   │   ├── color-donut.png
+│   │   │   │   │   │   │   ├── color-donut.webp
+│   │   │   │   │   │   │   ├── unsplash-wall-paint.png
+│   │   │   │   │   │   │   └── unsplash-wall-paint.webp
+│   │   │   │   │   │   ├── audio-video
+│   │   │   │   │   │   │   └── camera.webp
+│   │   │   │   │   │   ├── credit-cards
+│   │   │   │   │   │   │   ├── american_express_icon.png
+│   │   │   │   │   │   │   ├── american_express_icon.webp
+│   │   │   │   │   │   │   ├── mastercard_icon.png
+│   │   │   │   │   │   │   ├── mastercard_icon.webp
+│   │   │   │   │   │   │   ├── visa_icon.png
+│   │   │   │   │   │   │   └── visa_icon.webp
+│   │   │   │   │   │   └── privacy-protection
+│   │   │   │   │   │       ├── qr-code.png
+│   │   │   │   │   │       └── qr-code.webp
+│   │   │   │   │   ├── misc
+│   │   │   │   │   │   ├── faq-dark.webp
+│   │   │   │   │   │   └── faq-light.webp
+│   │   │   │   │   ├── settings-panel
+│   │   │   │   │   │   ├── combo-dark.webp
+│   │   │   │   │   │   ├── combo.webp
+│   │   │   │   │   │   ├── ltr-dark.webp
+│   │   │   │   │   │   ├── ltr.webp
+│   │   │   │   │   │   ├── rtl-dark.webp
+│   │   │   │   │   │   ├── rtl.webp
+│   │   │   │   │   │   ├── sidenav-collapsed-dark.webp
+│   │   │   │   │   │   ├── sidenav-collapsed.webp
+│   │   │   │   │   │   ├── sidenav-default-dark.webp
+│   │   │   │   │   │   ├── sidenav-default.webp
+│   │   │   │   │   │   ├── sidenav.webp
+│   │   │   │   │   │   ├── sitenav-dark.webp
+│   │   │   │   │   │   ├── slim-dark.webp
+│   │   │   │   │   │   ├── slim.webp
+│   │   │   │   │   │   ├── stacked-dark.webp
+│   │   │   │   │   │   ├── stacked.webp
+│   │   │   │   │   │   ├── topnav-dark.webp
+│   │   │   │   │   │   ├── topnav-default-dark.webp
+│   │   │   │   │   │   ├── topnav-default.webp
+│   │   │   │   │   │   ├── topnav-slim-dark.webp
+│   │   │   │   │   │   ├── topnav-slim.webp
+│   │   │   │   │   │   ├── topnav-stacked-dark.webp
+│   │   │   │   │   │   ├── topnav-stacked.webp
+│   │   │   │   │   │   └── topnav.webp
+│   │   │   │   │   ├── sidebar-vibrant.svg
+│   │   │   │   │   ├── sidebar-vibrant.webp
+│   │   │   │   │   ├── social
+│   │   │   │   │   │   ├── photos
+│   │   │   │   │   │   │   ├── 1.webp
+│   │   │   │   │   │   │   ├── 10.webp
+│   │   │   │   │   │   │   ├── 11.webp
+│   │   │   │   │   │   │   ├── 12.webp
+│   │   │   │   │   │   │   ├── 13.webp
+│   │   │   │   │   │   │   ├── 14.webp
+│   │   │   │   │   │   │   ├── 15.webp
+│   │   │   │   │   │   │   ├── 16.webp
+│   │   │   │   │   │   │   ├── 17.webp
+│   │   │   │   │   │   │   ├── 18.webp
+│   │   │   │   │   │   │   ├── 19.webp
+│   │   │   │   │   │   │   ├── 2.webp
+│   │   │   │   │   │   │   ├── 20.webp
+│   │   │   │   │   │   │   ├── 21.webp
+│   │   │   │   │   │   │   ├── 22.webp
+│   │   │   │   │   │   │   ├── 23.webp
+│   │   │   │   │   │   │   ├── 3.webp
+│   │   │   │   │   │   │   ├── 4.webp
+│   │   │   │   │   │   │   ├── 5.webp
+│   │   │   │   │   │   │   ├── 6.webp
+│   │   │   │   │   │   │   ├── 7.webp
+│   │   │   │   │   │   │   ├── 8.webp
+│   │   │   │   │   │   │   └── 9.webp
+│   │   │   │   │   │   └── social-banner-img.webp
+│   │   │   │   │   ├── topbar-vibrant.svg
+│   │   │   │   │   └── topbar-vibrant.webp
+│   │   │   │   └── time-tracker
+│   │   │   │       ├── screenshot_001,screenshot_002,screenshot_003
+│   │   │   │       │   ├── screenshot_001.webp
+│   │   │   │       │   ├── screenshot_002.webp
+│   │   │   │       │   ├── screenshot_003.webp
+│   │   │   │       │   ├── screenshot_004.webp
+│   │   │   │       │   ├── screenshot_005.webp
+│   │   │   │       │   └── screenshot_006.webp
+│   │   │   │       ├── screenshot_1.webp
+│   │   │   │       ├── screenshot_2.webp
+│   │   │   │       ├── screenshot_3.webp
+│   │   │   │       ├── screenshot_4.webp
+│   │   │   │       ├── screenshot_5.webp
+│   │   │   │       └── screenshot_6.webp
+│   │   │   ├── json
+│   │   │   │   ├── 404.json
+│   │   │   │   ├── 404_Dark.json
+│   │   │   │   ├── 404_Light.json
+│   │   │   │   ├── auth.json
+│   │   │   │   ├── auth_dark.json
+│   │   │   │   ├── bird.json
+│   │   │   │   ├── bird_dark.json
+│   │   │   │   ├── character.json
+│   │   │   │   ├── character_dark.json
+│   │   │   │   ├── coming-soon-1.json
+│   │   │   │   ├── coming-soon-2.json
+│   │   │   │   ├── pre-loader-2.json
+│   │   │   │   ├── pre-loader.json
+│   │   │   │   ├── splash-loader.json
+│   │   │   │   ├── starter.json
+│   │   │   │   ├── starter_dark.json
+│   │   │   │   ├── starter_light.json
+│   │   │   │   └── world.json
+│   │   │   └── videos
+│   │   │       └── file-manager
+│   │   │           ├── aurora.mp4
+│   │   │           ├── dodge_durango_suv.mp4
+│   │   │           ├── elegant_living_room_design.mp4
+│   │   │           ├── mt_fuji.mp4
+│   │   │           ├── photography_seashore.mp4
+│   │   │           └── travel_tales.mp4
+│   │   ├── components
+│   │   │   ├── base
+│   │   │   │   ├── AnchorLinkContainer.jsx
+│   │   │   │   ├── AudioPlayer.jsx
+│   │   │   │   ├── AvatarDropBox.jsx
+│   │   │   │   ├── Code.jsx
+│   │   │   │   ├── DateRangePicker.jsx
+│   │   │   │   ├── Editor.jsx
+│   │   │   │   ├── EmojiPicker.jsx
+│   │   │   │   ├── FileDropBox.jsx
+│   │   │   │   ├── FileDropZone.jsx
+│   │   │   │   ├── FullCalendar.jsx
+│   │   │   │   ├── IconifyIcon.jsx
+│   │   │   │   ├── Image.jsx
+│   │   │   │   ├── Lightbox.jsx
+│   │   │   │   ├── Mapbox.jsx
+│   │   │   │   ├── MuiIcon.jsx
+│   │   │   │   ├── NumberTextField.jsx
+│   │   │   │   ├── PhoneTextfield.jsx
+│   │   │   │   ├── ReactEchart.jsx
+│   │   │   │   ├── Resizable.jsx
+│   │   │   │   ├── SimpleBar.jsx
+│   │   │   │   ├── SortableDnd.jsx
+│   │   │   │   ├── StatusAvatar.jsx
+│   │   │   │   ├── SvelteGanttChart.jsx
+│   │   │   │   ├── Swiper.jsx
+│   │   │   │   ├── Video.jsx
+│   │   │   │   ├── color-picker
+│   │   │   │   │   ├── ColorPicker.jsx
+│   │   │   │   │   ├── InputFormats.jsx
+│   │   │   │   │   └── SwatchBox.jsx
+│   │   │   │   └── mapboxWorker.jsx
+│   │   │   ├── common
+│   │   │   │   ├── CardHeaderAction.jsx
+│   │   │   │   ├── ChartLegend.jsx
+│   │   │   │   ├── CodeBlock.jsx
+│   │   │   │   ├── CountrySelect.jsx
+│   │   │   │   ├── DashboardMenu.jsx
+│   │   │   │   ├── DashboardSelectMenu.jsx
+│   │   │   │   ├── FilePreview.jsx
+│   │   │   │   ├── LiveProvider.jsx
+│   │   │   │   ├── Logo.jsx
+│   │   │   │   ├── PasswordTextField.jsx
+│   │   │   │   ├── SectionHeader.jsx
+│   │   │   │   └── VibrantBackground.jsx
+│   │   │   ├── docs
+│   │   │   │   ├── DocCard.jsx
+│   │   │   │   ├── DocNestedSection.jsx
+│   │   │   │   ├── DocPageHeader.jsx
+│   │   │   │   ├── DocPageLayout.jsx
+│   │   │   │   └── DocSection.jsx
+│   │   │   ├── guard
+│   │   │   │   ├── AuthGuard.jsx
+│   │   │   │   └── GuestGurad.jsx
+│   │   │   ├── icons
+│   │   │   │   ├── Auth0Icon.jsx
+│   │   │   │   ├── CheckBoxBlankIcon.jsx
+│   │   │   │   ├── CheckBoxCheckedIcon.jsx
+│   │   │   │   ├── CheckBoxIndeterminateIcon.jsx
+│   │   │   │   ├── EllipsisHorizontalIcon.jsx
+│   │   │   │   ├── FirebaseIcon.jsx
+│   │   │   │   ├── JwtIcon.jsx
+│   │   │   │   ├── LeftPanelCloseIcon.jsx
+│   │   │   │   ├── RadioIcon.jsx
+│   │   │   │   ├── SettingsIcon.jsx
+│   │   │   │   ├── ZoomInIcon.jsx
+│   │   │   │   └── ZoomOutIcon.jsx
+│   │   │   ├── loading
+│   │   │   │   ├── DefaultLoader.jsx
+│   │   │   │   ├── PageLoader.jsx
+│   │   │   │   └── Splash.jsx
+│   │   │   ├── pagination
+│   │   │   │   ├── CustomTablePaginationAction.jsx
+│   │   │   │   ├── DataGridPagination.jsx
+│   │   │   │   ├── DataGridPaginationAction.jsx
+│   │   │   │   └── TableLabelDisplayedRows.jsx
+│   │   │   ├── pickers
+│   │   │   │   ├── ActionBar.jsx
+│   │   │   │   ├── DatePickersToolbar.jsx
+│   │   │   │   ├── DateTimePickersToolbar.jsx
+│   │   │   │   └── TimePickersToolbar.jsx
+│   │   │   ├── scroll-spy
+│   │   │   │   ├── ScrollSpyContent.jsx
+│   │   │   │   ├── ScrollSpyNavItem.jsx
+│   │   │   │   └── index.jsx
+│   │   │   ├── sections
+│   │   │   │   ├── account
+│   │   │   │   │   ├── SideTabList.jsx
+│   │   │   │   │   ├── accessibility
+│   │   │   │   │   │   ├── AccessibilityTabPanel.jsx
+│   │   │   │   │   │   ├── ColorFilter.jsx
+│   │   │   │   │   │   ├── ColorOptions.jsx
+│   │   │   │   │   │   ├── Contrast.jsx
+│   │   │   │   │   │   ├── Font.jsx
+│   │   │   │   │   │   └── ThemeSwitcher.jsx
+│   │   │   │   │   ├── audio-video
+│   │   │   │   │   │   ├── AudioVideoTabPanel.jsx
+│   │   │   │   │   │   ├── CameraSettings.jsx
+│   │   │   │   │   │   ├── MicrophoneSpeaker.jsx
+│   │   │   │   │   │   └── Preferences.jsx
+│   │   │   │   │   ├── chat-preferences
+│   │   │   │   │   │   ├── ChatPreferencesTabPanel.jsx
+│   │   │   │   │   │   └── GeneralSettings.jsx
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── AccountDialog.jsx
+│   │   │   │   │   │   ├── AccountFormDialog.jsx
+│   │   │   │   │   │   ├── AccountTab.jsx
+│   │   │   │   │   │   ├── AccountTabPanel.jsx
+│   │   │   │   │   │   ├── AccountTabPanelSection.jsx
+│   │   │   │   │   │   ├── InfoCard.jsx
+│   │   │   │   │   │   └── InfoCardAttribute.jsx
+│   │   │   │   │   ├── credit-card
+│   │   │   │   │   │   ├── CardFormDialog.jsx
+│   │   │   │   │   │   ├── CreditCard.jsx
+│   │   │   │   │   │   ├── CreditCardInfoTabPanel.jsx
+│   │   │   │   │   │   └── PaymentMethodsSection.jsx
+│   │   │   │   │   ├── date-time
+│   │   │   │   │   │   ├── DateAndTime.jsx
+│   │   │   │   │   │   ├── DateTimeTabPanel.jsx
+│   │   │   │   │   │   └── Timezone.jsx
+│   │   │   │   │   ├── language-region
+│   │   │   │   │   │   ├── LanguageDialog.jsx
+│   │   │   │   │   │   ├── LanguageItem.jsx
+│   │   │   │   │   │   ├── LanguageListItem.jsx
+│   │   │   │   │   │   ├── LanguageRegionTabPanel.jsx
+│   │   │   │   │   │   ├── Languages.jsx
+│   │   │   │   │   │   ├── PreferredLanguage.jsx
+│   │   │   │   │   │   └── Region.jsx
+│   │   │   │   │   ├── notification-alerts
+│   │   │   │   │   │   ├── GeneralNotification.jsx
+│   │   │   │   │   │   ├── NotificationAlertsTabPanel.jsx
+│   │   │   │   │   │   ├── NotificationOptions.jsx
+│   │   │   │   │   │   └── NotificationReceivingMethod.jsx
+│   │   │   │   │   ├── personal-info
+│   │   │   │   │   │   ├── Address.jsx
+│   │   │   │   │   │   ├── Birthday.jsx
+│   │   │   │   │   │   ├── Email.jsx
+│   │   │   │   │   │   ├── Names.jsx
+│   │   │   │   │   │   ├── PersonalInfoTabPanel.jsx
+│   │   │   │   │   │   ├── Phone.jsx
+│   │   │   │   │   │   └── UserName.jsx
+│   │   │   │   │   ├── privacy-protection
+│   │   │   │   │   │   ├── AlternateLoginMethod.jsx
+│   │   │   │   │   │   ├── ChangePassword.jsx
+│   │   │   │   │   │   ├── ConnectedDevice.jsx
+│   │   │   │   │   │   ├── DeviceDialog.jsx
+│   │   │   │   │   │   ├── LoggedDevice.jsx
+│   │   │   │   │   │   ├── LoginAlerts.jsx
+│   │   │   │   │   │   ├── PrivacyProtectionTabPanel.jsx
+│   │   │   │   │   │   ├── SecurityKeyEditFormDialog.jsx
+│   │   │   │   │   │   └── TwoFactorAuthOTP.jsx
+│   │   │   │   │   ├── shipping-billing-address
+│   │   │   │   │   │   ├── BillingAddress.jsx
+│   │   │   │   │   │   ├── ShippingAddress.jsx
+│   │   │   │   │   │   └── ShippingBillingAddressTabPanel.jsx
+│   │   │   │   │   ├── storage
+│   │   │   │   │   │   ├── ManageStorage.jsx
+│   │   │   │   │   │   ├── SavedtoStorage.jsx
+│   │   │   │   │   │   ├── StorageBar.jsx
+│   │   │   │   │   │   ├── StorageCategoryCard.jsx
+│   │   │   │   │   │   └── StorageTabPanel.jsx
+│   │   │   │   │   ├── touch-id
+│   │   │   │   │   │   ├── Biometrics.jsx
+│   │   │   │   │   │   ├── TouchIdFeatures.jsx
+│   │   │   │   │   │   └── TouchIdTabPanel.jsx
+│   │   │   │   │   ├── users-permissions
+│   │   │   │   │   │   ├── CollabPermissions.jsx
+│   │   │   │   │   │   ├── Global.jsx
+│   │   │   │   │   │   ├── Ownership.jsx
+│   │   │   │   │   │   ├── UserPermissions.jsx
+│   │   │   │   │   │   └── UsersPermissionsTabPanel.jsx
+│   │   │   │   │   └── work-education
+│   │   │   │   │       ├── Education.jsx
+│   │   │   │   │       ├── EducationHistorySection.jsx
+│   │   │   │   │       ├── Work.jsx
+│   │   │   │   │       ├── WorkEducationTabPanel.jsx
+│   │   │   │   │       └── WorkHistorySection.jsx
+│   │   │   │   ├── authentications
+│   │   │   │   │   ├── CheckMailBoxDialog.jsx
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── DefaultCredentialAlert.jsx
+│   │   │   │   │   │   └── ViewOnlyAlert.jsx
+│   │   │   │   │   └── default
+│   │   │   │   │       ├── ForgotPasswordForm.jsx
+│   │   │   │   │       ├── LoginForm.jsx
+│   │   │   │   │       ├── SetPassworForm.jsx
+│   │   │   │   │       ├── SignupForm.jsx
+│   │   │   │   │       ├── SocialAuth.jsx
+│   │   │   │   │       └── TwoFAForm.jsx
+│   │   │   │   ├── calendar
+│   │   │   │   │   ├── CalendarHeader.jsx
+│   │   │   │   │   ├── CalendarLayout.jsx
+│   │   │   │   │   ├── CalendarMain.jsx
+│   │   │   │   │   ├── CalendarSidebar
+│   │   │   │   │   │   ├── CalendarFilters.jsx
+│   │   │   │   │   │   ├── CalendarSidebar.jsx
+│   │   │   │   │   │   ├── CalendarSidebarPanel.jsx
+│   │   │   │   │   │   ├── CategoryList.jsx
+│   │   │   │   │   │   └── TogglePanel.jsx
+│   │   │   │   │   ├── CalendarTop.jsx
+│   │   │   │   │   ├── EventDialog
+│   │   │   │   │   │   ├── CalendarEventForm.jsx
+│   │   │   │   │   │   ├── CalendarTaskForm.jsx
+│   │   │   │   │   │   ├── EventDateTimePicker.jsx
+│   │   │   │   │   │   ├── EventDetailsSection.jsx
+│   │   │   │   │   │   └── EventDialog.jsx
+│   │   │   │   │   ├── useCalendarHandlers.js
+│   │   │   │   │   └── useEventDialog.js
+│   │   │   │   ├── chat
+│   │   │   │   │   ├── ChatLayout.jsx
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── AudioPlayer.jsx
+│   │   │   │   │   │   └── RecipientAvatar.jsx
+│   │   │   │   │   ├── conversation
+│   │   │   │   │   │   ├── aside
+│   │   │   │   │   │   │   ├── AsideHeader.jsx
+│   │   │   │   │   │   │   ├── ConversationAside.jsx
+│   │   │   │   │   │   │   └── partials
+│   │   │   │   │   │   │       ├── ConfirmationDialog.jsx
+│   │   │   │   │   │   │       ├── FileAttachments.jsx
+│   │   │   │   │   │   │       ├── MediaGallery.jsx
+│   │   │   │   │   │   │       └── RecipientsInfo.jsx
+│   │   │   │   │   │   └── main
+│   │   │   │   │   │       ├── ContentHeader.jsx
+│   │   │   │   │   │       ├── content
+│   │   │   │   │   │       │   ├── Content.jsx
+│   │   │   │   │   │       │   ├── message
+│   │   │   │   │   │       │   │   ├── MessageWrapper.jsx
+│   │   │   │   │   │       │   │   ├── content
+│   │   │   │   │   │       │   │   │   ├── FileContent.jsx
+│   │   │   │   │   │       │   │   │   ├── MediaContent.jsx
+│   │   │   │   │   │       │   │   │   └── TextContent.jsx
+│   │   │   │   │   │       │   │   ├── formats
+│   │   │   │   │   │       │   │   │   ├── AudioMessage.jsx
+│   │   │   │   │   │       │   │   │   ├── FileMessage.jsx
+│   │   │   │   │   │       │   │   │   ├── MediaMessage.jsx
+│   │   │   │   │   │       │   │   │   └── TextMessage.jsx
+│   │   │   │   │   │       │   │   ├── index.jsx
+│   │   │   │   │   │       │   │   └── partials
+│   │   │   │   │   │       │   │       ├── ActionButtons.jsx
+│   │   │   │   │   │       │   │       ├── ContentSkeleton.jsx
+│   │   │   │   │   │       │   │       ├── MessageHeader.jsx
+│   │   │   │   │   │       │   │       ├── ReactionPreview.jsx
+│   │   │   │   │   │       │   │       └── RecipientPopper.jsx
+│   │   │   │   │   │       │   └── partials
+│   │   │   │   │   │       │       ├── ContentFallback.jsx
+│   │   │   │   │   │       │       └── StarterMessage.jsx
+│   │   │   │   │   │       └── content-footer
+│   │   │   │   │   │           ├── AttachmentPreview.jsx
+│   │   │   │   │   │           ├── ContentFooter.jsx
+│   │   │   │   │   │           ├── TextInput.jsx
+│   │   │   │   │   │           └── controls
+│   │   │   │   │   │               ├── ChatAttachments.jsx
+│   │   │   │   │   │               ├── ChatAudioRecorder.jsx
+│   │   │   │   │   │               ├── ChatCameraCapture.jsx
+│   │   │   │   │   │               ├── ChatControls.jsx
+│   │   │   │   │   │               └── ChatEmojiPicker.jsx
+│   │   │   │   │   ├── new
+│   │   │   │   │   │   └── NewChatHeader.jsx
+│   │   │   │   │   └── sidebar
+│   │   │   │   │       ├── ChatSidebar.jsx
+│   │   │   │   │       ├── conversation-list
+│   │   │   │   │       │   ├── CollapsiblePanel.jsx
+│   │   │   │   │       │   ├── ConversationItem.jsx
+│   │   │   │   │       │   └── ConversationList.jsx
+│   │   │   │   │       ├── filters
+│   │   │   │   │       │   ├── FilterMenu.jsx
+│   │   │   │   │       │   └── SearchFilterMenu.jsx
+│   │   │   │   │       └── layouts
+│   │   │   │   │           ├── MiniSidebar.jsx
+│   │   │   │   │           ├── ResizableSidebar.jsx
+│   │   │   │   │           ├── ResponsiveSidebar.jsx
+│   │   │   │   │           ├── SidebarFallback.jsx
+│   │   │   │   │           └── SidebarHeader.jsx
+│   │   │   │   ├── common
+│   │   │   │   │   ├── EcomStatSection.jsx
+│   │   │   │   │   └── PageBreadcrumb.jsx
+│   │   │   │   ├── crm
+│   │   │   │   │   ├── add-contact
+│   │   │   │   │   │   ├── AddContactStepper.jsx
+│   │   │   │   │   │   ├── ContactFormSection.jsx
+│   │   │   │   │   │   ├── ControlledSelect.jsx
+│   │   │   │   │   │   └── steps
+│   │   │   │   │   │       ├── CompanyInfoForm.jsx
+│   │   │   │   │   │       ├── LeadInfoForm.jsx
+│   │   │   │   │   │       └── PersonalInfoForm.jsx
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── ActivityTabs.jsx
+│   │   │   │   │   │   ├── CRMDropdownMenu.jsx
+│   │   │   │   │   │   ├── CopyableText.jsx
+│   │   │   │   │   │   └── activity-tab-panels
+│   │   │   │   │   │       ├── all-activities
+│   │   │   │   │   │       │   ├── Activity.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       ├── call-log
+│   │   │   │   │   │       │   ├── CallDetails.jsx
+│   │   │   │   │   │       │   ├── CallRecord.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       ├── email
+│   │   │   │   │   │       │   ├── EmailAccordion.jsx
+│   │   │   │   │   │       │   ├── EmailFile.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       ├── meeting
+│   │   │   │   │   │       │   ├── Meeting.jsx
+│   │   │   │   │   │       │   ├── MeetingList.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       ├── notes
+│   │   │   │   │   │       │   ├── Note.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       └── tasks
+│   │   │   │   │   │           ├── TaskList.jsx
+│   │   │   │   │   │           ├── TaskTable.jsx
+│   │   │   │   │   │           └── index.jsx
+│   │   │   │   │   ├── deal-details
+│   │   │   │   │   │   ├── AssignedTo.jsx
+│   │   │   │   │   │   ├── FloatingBar.jsx
+│   │   │   │   │   │   ├── SalesPipeline.jsx
+│   │   │   │   │   │   ├── account
+│   │   │   │   │   │   │   ├── Deals.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── activity-monitoring
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── activity-summary
+│   │   │   │   │   │   │   ├── ActivityTimeline.jsx
+│   │   │   │   │   │   │   ├── Summary.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── analytics
+│   │   │   │   │   │   │   ├── AnalyticsChart.jsx
+│   │   │   │   │   │   │   ├── AnalyticsDetails.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── associated-contact
+│   │   │   │   │   │   │   ├── Contact.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── deal-information
+│   │   │   │   │   │   │   ├── DealInfoItem.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   └── page-header
+│   │   │   │   │   │       ├── AccessToggle.jsx
+│   │   │   │   │   │       ├── DealDetailsHeader.jsx
+│   │   │   │   │   │       └── DealStatus.jsx
+│   │   │   │   │   ├── deals
+│   │   │   │   │   │   ├── DealsKanban.jsx
+│   │   │   │   │   │   ├── KanbanElements.jsx
+│   │   │   │   │   │   ├── deal-card
+│   │   │   │   │   │   │   ├── AddNewDeal.jsx
+│   │   │   │   │   │   │   ├── CreateDealDialog.jsx
+│   │   │   │   │   │   │   ├── DealCard.jsx
+│   │   │   │   │   │   │   └── SortableDealItem.jsx
+│   │   │   │   │   │   ├── list-container
+│   │   │   │   │   │   │   ├── AddNewList.jsx
+│   │   │   │   │   │   │   ├── AddNewListDialog.jsx
+│   │   │   │   │   │   │   ├── DealItems.jsx
+│   │   │   │   │   │   │   ├── ListContainer.jsx
+│   │   │   │   │   │   │   ├── ListHeader.jsx
+│   │   │   │   │   │   │   ├── ListMenu.jsx
+│   │   │   │   │   │   │   └── SortableListItem.jsx
+│   │   │   │   │   │   ├── overlays
+│   │   │   │   │   │   │   ├── DealCardOverlay.jsx
+│   │   │   │   │   │   │   └── ListContainerOverlay.jsx
+│   │   │   │   │   │   └── page-header
+│   │   │   │   │   │       └── DealsHeader.jsx
+│   │   │   │   │   └── lead-details
+│   │   │   │   │       ├── ContactInfo.jsx
+│   │   │   │   │       ├── Deal.jsx
+│   │   │   │   │       ├── LeadDetailsHeader.jsx
+│   │   │   │   │       └── OngoingDeals.jsx
+│   │   │   │   ├── dashboards
+│   │   │   │   │   ├── analytics
+│   │   │   │   │   │   ├── cta
+│   │   │   │   │   │   │   └── ProPlanCTA.jsx
+│   │   │   │   │   │   ├── kpi
+│   │   │   │   │   │   │   └── AnalyticKPI.jsx
+│   │   │   │   │   │   ├── realtime-engagement
+│   │   │   │   │   │   │   ├── EngagementMap.jsx
+│   │   │   │   │   │   │   ├── EngagementPreview.jsx
+│   │   │   │   │   │   │   ├── RealtimeEngagement.jsx
+│   │   │   │   │   │   │   └── RealtimeEngagementChart.jsx
+│   │   │   │   │   │   ├── session-by-os
+│   │   │   │   │   │   │   ├── SessionByOS.jsx
+│   │   │   │   │   │   │   └── SessionByOSChart.jsx
+│   │   │   │   │   │   ├── top-campaigns
+│   │   │   │   │   │   │   ├── TopCampaigns.jsx
+│   │   │   │   │   │   │   └── TopCampaignsChart.jsx
+│   │   │   │   │   │   ├── user-by-cohort
+│   │   │   │   │   │   │   ├── UserByCohort.jsx
+│   │   │   │   │   │   │   └── UserByCohortChart.jsx
+│   │   │   │   │   │   ├── user-by-country
+│   │   │   │   │   │   │   ├── UserByCountry.jsx
+│   │   │   │   │   │   │   └── UserByCountryTable.jsx
+│   │   │   │   │   │   ├── user-by-os
+│   │   │   │   │   │   │   ├── OSUsageChart.jsx
+│   │   │   │   │   │   │   ├── OSUsageList.jsx
+│   │   │   │   │   │   │   └── UserByOS.jsx
+│   │   │   │   │   │   └── user-engagement
+│   │   │   │   │   │       ├── UserEngagement.jsx
+│   │   │   │   │   │       └── UserEngagementChart.jsx
+│   │   │   │   │   ├── crm
+│   │   │   │   │   │   ├── CRMGreeting.jsx
+│   │   │   │   │   │   ├── acquisition-cost
+│   │   │   │   │   │   │   ├── AcquisitionCost.jsx
+│   │   │   │   │   │   │   └── AcquisitionCostChart.jsx
+│   │   │   │   │   │   ├── active-users
+│   │   │   │   │   │   │   ├── ActiveUsers.jsx
+│   │   │   │   │   │   │   └── ActiveUsersChart.jsx
+│   │   │   │   │   │   ├── avg-lifetime-value
+│   │   │   │   │   │   │   ├── AvgLifetimeValue.jsx
+│   │   │   │   │   │   │   └── AvgLifetimeValueChart.jsx
+│   │   │   │   │   │   ├── customer-feedback
+│   │   │   │   │   │   │   ├── CustomerFeedback.jsx
+│   │   │   │   │   │   │   └── CustomerFeedbackChart.jsx
+│   │   │   │   │   │   ├── generated-revenue
+│   │   │   │   │   │   │   ├── CRMGeneratedRevenue.jsx
+│   │   │   │   │   │   │   └── CRMGeneratedRevenueChart.jsx
+│   │   │   │   │   │   ├── kpi
+│   │   │   │   │   │   │   ├── CRMKPIs.jsx
+│   │   │   │   │   │   │   └── KPI.jsx
+│   │   │   │   │   │   ├── lead-sources
+│   │   │   │   │   │   │   ├── LeadSources.jsx
+│   │   │   │   │   │   │   └── LeadSourcesChart.jsx
+│   │   │   │   │   │   └── sale-funnel
+│   │   │   │   │   │       ├── SaleFunnel.jsx
+│   │   │   │   │   │       ├── SaleFunnelChart.jsx
+│   │   │   │   │   │       └── SaleFunnelTable.jsx
+│   │   │   │   │   ├── e-commerce
+│   │   │   │   │   │   ├── Greeting.jsx
+│   │   │   │   │   │   ├── Promo.jsx
+│   │   │   │   │   │   ├── clients-locations
+│   │   │   │   │   │   │   ├── ClientsLocations.jsx
+│   │   │   │   │   │   │   ├── LocationChart.jsx
+│   │   │   │   │   │   │   └── LocationMap.jsx
+│   │   │   │   │   │   ├── generated-revenue
+│   │   │   │   │   │   │   ├── GeneratedRevenue.jsx
+│   │   │   │   │   │   │   └── GeneratedRevenueChart.jsx
+│   │   │   │   │   │   ├── market-share
+│   │   │   │   │   │   │   ├── MarketShare.jsx
+│   │   │   │   │   │   │   ├── MarketShareChart.jsx
+│   │   │   │   │   │   │   └── MarketShareList.jsx
+│   │   │   │   │   │   ├── monthly-profit
+│   │   │   │   │   │   │   ├── MonthlyProfit.jsx
+│   │   │   │   │   │   │   └── MonthlyProfitChart.jsx
+│   │   │   │   │   │   ├── recent-activities
+│   │   │   │   │   │   │   └── RecentActivities.jsx
+│   │   │   │   │   │   ├── storage-usage
+│   │   │   │   │   │   │   ├── StorageBar.jsx
+│   │   │   │   │   │   │   └── StorageUsage.jsx
+│   │   │   │   │   │   ├── top-products
+│   │   │   │   │   │   │   ├── ProductsTable.jsx
+│   │   │   │   │   │   │   └── TopProducts.jsx
+│   │   │   │   │   │   └── visitor-revenue
+│   │   │   │   │   │       ├── VisitorRevenue.jsx
+│   │   │   │   │   │       └── VisitorRevenueChart.jsx
+│   │   │   │   │   ├── hrm
+│   │   │   │   │   │   ├── HRMKPI.jsx
+│   │   │   │   │   │   ├── ProfileDetailCard.jsx
+│   │   │   │   │   │   ├── allocation
+│   │   │   │   │   │   │   ├── Allocation.jsx
+│   │   │   │   │   │   │   ├── AllocationChart.jsx
+│   │   │   │   │   │   │   ├── AllocationTable.jsx
+│   │   │   │   │   │   │   └── ChartLegend.jsx
+│   │   │   │   │   │   ├── attendance
+│   │   │   │   │   │   │   ├── Attendance.jsx
+│   │   │   │   │   │   │   ├── AttendanceCalendar.jsx
+│   │   │   │   │   │   │   ├── AttendanceChart.jsx
+│   │   │   │   │   │   │   ├── CalendarDay.jsx
+│   │   │   │   │   │   │   └── HeaderActions.jsx
+│   │   │   │   │   │   ├── headcount
+│   │   │   │   │   │   │   ├── Headcount.jsx
+│   │   │   │   │   │   │   └── HeadcountChart.jsx
+│   │   │   │   │   │   ├── leaves
+│   │   │   │   │   │   │   ├── LeaveCard.jsx
+│   │   │   │   │   │   │   └── Leaves.jsx
+│   │   │   │   │   │   ├── notifications
+│   │   │   │   │   │   │   ├── NotificationItem.jsx
+│   │   │   │   │   │   │   ├── Notifications.jsx
+│   │   │   │   │   │   │   └── SortBySelect.jsx
+│   │   │   │   │   │   ├── profile
+│   │   │   │   │   │   │   ├── Profile.jsx
+│   │   │   │   │   │   │   └── RealtimeActivityChart.jsx
+│   │   │   │   │   │   └── resignations
+│   │   │   │   │   │       ├── ActivityChart.jsx
+│   │   │   │   │   │       ├── Resignations.jsx
+│   │   │   │   │   │       └── ResignationsTable.jsx
+│   │   │   │   │   ├── project
+│   │   │   │   │   │   ├── events
+│   │   │   │   │   │   │   ├── Events.jsx
+│   │   │   │   │   │   │   ├── EventsCalendar
+│   │   │   │   │   │   │   │   ├── EventDetails.jsx
+│   │   │   │   │   │   │   │   ├── EventNotes.jsx
+│   │   │   │   │   │   │   │   ├── EventTitleTime.jsx
+│   │   │   │   │   │   │   │   ├── EventsCalendar.jsx
+│   │   │   │   │   │   │   │   └── ScheduleDialog.jsx
+│   │   │   │   │   │   │   └── EventsTimeline.jsx
+│   │   │   │   │   │   ├── hours-completed
+│   │   │   │   │   │   │   ├── HoursCompleted.jsx
+│   │   │   │   │   │   │   └── HoursCompletedChart.jsx
+│   │   │   │   │   │   ├── product-roadmap
+│   │   │   │   │   │   │   ├── ProductRoadmap.jsx
+│   │   │   │   │   │   │   └── ProjectDataTable.jsx
+│   │   │   │   │   │   ├── project-deadlines
+│   │   │   │   │   │   │   ├── DeadlineChart.jsx
+│   │   │   │   │   │   │   └── ProjectDeadlines.jsx
+│   │   │   │   │   │   ├── project-timeline
+│   │   │   │   │   │   │   ├── ProjectTimeline.jsx
+│   │   │   │   │   │   │   └── ProjectTimelineChart.jsx
+│   │   │   │   │   │   ├── schedule-meeting
+│   │   │   │   │   │   │   ├── MeetingCard.jsx
+│   │   │   │   │   │   │   └── ScheduleMeeting.jsx
+│   │   │   │   │   │   └── task-summary
+│   │   │   │   │   │       ├── TaskSummary.jsx
+│   │   │   │   │   │       └── TaskSummaryCard.jsx
+│   │   │   │   │   └── time-tracker
+│   │   │   │   │       ├── daily-task-track
+│   │   │   │   │       │   ├── CustomTask.jsx
+│   │   │   │   │       │   ├── DailyTaskTrack.jsx
+│   │   │   │   │       │   ├── TaskTrackChart.jsx
+│   │   │   │   │       │   └── TaskTrackHeader.jsx
+│   │   │   │   │       ├── kpi
+│   │   │   │   │       │   ├── EarnedThisWeekChart.jsx
+│   │   │   │   │       │   ├── KPI.jsx
+│   │   │   │   │       │   ├── ProjectsWorkedChart.jsx
+│   │   │   │   │       │   ├── TotalHoursChart.jsx
+│   │   │   │   │       │   └── WeeklyActivityChart.jsx
+│   │   │   │   │       ├── page-header
+│   │   │   │   │       │   ├── Billable.jsx
+│   │   │   │   │       │   ├── PageHeader.jsx
+│   │   │   │   │       │   ├── ProjectSelect.jsx
+│   │   │   │   │       │   └── Timer.jsx
+│   │   │   │   │       ├── screencasts
+│   │   │   │   │       │   ├── Screencasts.jsx
+│   │   │   │   │       │   ├── activities
+│   │   │   │   │       │   │   ├── Activities.jsx
+│   │   │   │   │       │   │   └── Screenshot.jsx
+│   │   │   │   │       │   └── header
+│   │   │   │   │       │       ├── ScreencastsHeader.jsx
+│   │   │   │   │       │       ├── TimeSelect.jsx
+│   │   │   │   │       │       └── TimeToggleTab.jsx
+│   │   │   │   │       └── timesheet
+│   │   │   │   │           ├── Timesheet.jsx
+│   │   │   │   │           ├── TimesheetTable.jsx
+│   │   │   │   │           └── filters
+│   │   │   │   │               ├── FilterMenu.jsx
+│   │   │   │   │               └── Filters.jsx
+│   │   │   │   ├── ecommerce
+│   │   │   │   │   ├── admin
+│   │   │   │   │   │   ├── common
+│   │   │   │   │   │   │   ├── PageHeader.jsx
+│   │   │   │   │   │   │   └── ProductVariantListItem.jsx
+│   │   │   │   │   │   ├── create-order
+│   │   │   │   │   │   │   ├── BottomBar.jsx
+│   │   │   │   │   │   │   ├── aside
+│   │   │   │   │   │   │   │   ├── AdditionalDetails.jsx
+│   │   │   │   │   │   │   │   ├── Address.jsx
+│   │   │   │   │   │   │   │   ├── Customer.jsx
+│   │   │   │   │   │   │   │   ├── SearchCustomer.jsx
+│   │   │   │   │   │   │   │   ├── Tags.jsx
+│   │   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   │   └── main
+│   │   │   │   │   │   │       ├── CreateOrderItem.jsx
+│   │   │   │   │   │   │       ├── CreateOrderPaymentSummary.jsx
+│   │   │   │   │   │   │       ├── ItemVariant.jsx
+│   │   │   │   │   │   │       └── index.jsx
+│   │   │   │   │   │   ├── invoice
+│   │   │   │   │   │   │   ├── InvoiceFooter.jsx
+│   │   │   │   │   │   │   ├── InvoiceHead.jsx
+│   │   │   │   │   │   │   ├── InvoiceItemsTable.jsx
+│   │   │   │   │   │   │   ├── InvoiceOrderDetails.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── invoice-list
+│   │   │   │   │   │   │   ├── InvoicesTable.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── order
+│   │   │   │   │   │   │   ├── OrderDetailsProvider.jsx
+│   │   │   │   │   │   │   ├── OrderHead.jsx
+│   │   │   │   │   │   │   ├── aside
+│   │   │   │   │   │   │   │   ├── AdditionalDetails.jsx
+│   │   │   │   │   │   │   │   ├── Address.jsx
+│   │   │   │   │   │   │   │   ├── ConversionSummary.jsx
+│   │   │   │   │   │   │   │   ├── Customer.jsx
+│   │   │   │   │   │   │   │   ├── FraudAnalysis.jsx
+│   │   │   │   │   │   │   │   ├── Tags.jsx
+│   │   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   │   └── main
+│   │   │   │   │   │   │       ├── OrderItem.jsx
+│   │   │   │   │   │   │       ├── OrderItems.jsx
+│   │   │   │   │   │   │       ├── OrderPaymentSummary.jsx
+│   │   │   │   │   │   │       ├── OrderTimeline.jsx
+│   │   │   │   │   │   │       └── index.jsx
+│   │   │   │   │   │   ├── order-list
+│   │   │   │   │   │   │   ├── OrderDetailsPopper.jsx
+│   │   │   │   │   │   │   ├── OrderTable.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── product-list
+│   │   │   │   │   │   │   ├── ProductsTable.jsx
+│   │   │   │   │   │   │   ├── filters
+│   │   │   │   │   │   │   │   ├── FilterMenu.jsx
+│   │   │   │   │   │   │   │   └── FilterSection.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   ├── product-listing
+│   │   │   │   │   │   │   ├── ProductListingStepper.jsx
+│   │   │   │   │   │   │   ├── steps
+│   │   │   │   │   │   │   │   ├── Inventory.jsx
+│   │   │   │   │   │   │   │   ├── MediaFiles.jsx
+│   │   │   │   │   │   │   │   ├── NameDescription.jsx
+│   │   │   │   │   │   │   │   ├── PricingQuantity.jsx
+│   │   │   │   │   │   │   │   ├── Shipping.jsx
+│   │   │   │   │   │   │   │   ├── Tags.jsx
+│   │   │   │   │   │   │   │   ├── product-information
+│   │   │   │   │   │   │   │   │   ├── OptionalInfo.jsx
+│   │   │   │   │   │   │   │   │   ├── ProductDimensionInput.jsx
+│   │   │   │   │   │   │   │   │   └── ProductInfo.jsx
+│   │   │   │   │   │   │   │   ├── variations
+│   │   │   │   │   │   │   │   │   ├── ImagesDialog.jsx
+│   │   │   │   │   │   │   │   │   ├── OptionField.jsx
+│   │   │   │   │   │   │   │   │   ├── OptionValueField.jsx
+│   │   │   │   │   │   │   │   │   ├── ProductVariants.jsx
+│   │   │   │   │   │   │   │   │   └── VariantsList.jsx
+│   │   │   │   │   │   │   │   └── vital-info
+│   │   │   │   │   │   │   │       ├── CategorySelect.jsx
+│   │   │   │   │   │   │   │       └── VitalInfo.jsx
+│   │   │   │   │   │   │   └── useProductListingForm.jsx
+│   │   │   │   │   │   └── refund
+│   │   │   │   │   │       ├── aside
+│   │   │   │   │   │       │   ├── Summary.jsx
+│   │   │   │   │   │       │   └── index.jsx
+│   │   │   │   │   │       └── main
+│   │   │   │   │   │           ├── RefundItem.jsx
+│   │   │   │   │   │           ├── RefundItemTable.jsx
+│   │   │   │   │   │           └── index.jsx
+│   │   │   │   │   └── customer
+│   │   │   │   │       ├── cart
+│   │   │   │   │       │   ├── CartBottomBar.jsx
+│   │   │   │   │       │   ├── CartItem.jsx
+│   │   │   │   │       │   ├── CartItemsFallback.jsx
+│   │   │   │   │       │   ├── CartMain.jsx
+│   │   │   │   │       │   └── ProductGiftDialogue.jsx
+│   │   │   │   │       ├── checkout
+│   │   │   │   │       │   ├── CheckoutBottomBar.jsx
+│   │   │   │   │       │   ├── aside
+│   │   │   │   │       │   │   └── CartSummary.jsx
+│   │   │   │   │       │   └── main
+│   │   │   │   │       │       ├── ExpressCheckout.jsx
+│   │   │   │   │       │       └── checkout-stepper
+│   │   │   │   │       │           ├── CheckoutStepper.jsx
+│   │   │   │   │       │           ├── RenderStepData.jsx
+│   │   │   │   │       │           ├── steps
+│   │   │   │   │       │           │   ├── CustomerInfo.jsx
+│   │   │   │   │       │           │   ├── DeliveryOptions.jsx
+│   │   │   │   │       │           │   └── ShippingAddress.jsx
+│   │   │   │   │       │           └── useCheckoutForm.jsx
+│   │   │   │   │       ├── common
+│   │   │   │   │       │   ├── AddToCartSnackbar.jsx
+│   │   │   │   │       │   ├── PageHeader.jsx
+│   │   │   │   │       │   ├── PaymentSummary.jsx
+│   │   │   │   │       │   ├── ProductCard.jsx
+│   │   │   │   │       │   ├── QuantityButtons.jsx
+│   │   │   │   │       │   └── SuggestedProducts.jsx
+│   │   │   │   │       ├── customer-account
+│   │   │   │   │       │   ├── AccountAside.jsx
+│   │   │   │   │       │   └── main
+│   │   │   │   │       │       ├── GeneralInfo.jsx
+│   │   │   │   │       │       ├── OrderStatus.jsx
+│   │   │   │   │       │       ├── Summary.jsx
+│   │   │   │   │       │       └── TrackOrders.jsx
+│   │   │   │   │       ├── homepage
+│   │   │   │   │       │   ├── CategoryBanners.jsx
+│   │   │   │   │       │   ├── FeaturedProducts.jsx
+│   │   │   │   │       │   ├── Features.jsx
+│   │   │   │   │       │   ├── HeroSlider.jsx
+│   │   │   │   │       │   ├── MostViewedProducts.jsx
+│   │   │   │   │       │   ├── PopularCategories.jsx
+│   │   │   │   │       │   ├── PromoAlert.jsx
+│   │   │   │   │       │   └── SupportFAQ.jsx
+│   │   │   │   │       ├── order-confirmation
+│   │   │   │   │       │   ├── OrderConfirmationList.jsx
+│   │   │   │   │       │   └── OrderConfirmationPreview.jsx
+│   │   │   │   │       ├── order-details
+│   │   │   │   │       │   ├── OrderDetailsAside.jsx
+│   │   │   │   │       │   ├── OrderedItem.jsx
+│   │   │   │   │       │   └── ProductAttributeRow.jsx
+│   │   │   │   │       ├── order-list
+│   │   │   │   │       │   ├── OrderedItem.jsx
+│   │   │   │   │       │   ├── OrderedItemList.jsx
+│   │   │   │   │       │   └── index.jsx
+│   │   │   │   │       ├── order-track
+│   │   │   │   │       │   ├── OrderStatusInfoTable.jsx
+│   │   │   │   │       │   ├── OrderTrackAside.jsx
+│   │   │   │   │       │   └── OrderTrackStepper.jsx
+│   │   │   │   │       ├── payment
+│   │   │   │   │       │   ├── PaymentBottomBar.jsx
+│   │   │   │   │       │   ├── PaymentDetails.jsx
+│   │   │   │   │       │   └── PaymentMethods.jsx
+│   │   │   │   │       ├── product-details
+│   │   │   │   │       │   ├── GeneralInfo.jsx
+│   │   │   │   │       │   ├── PricingBottomBar.jsx
+│   │   │   │   │       │   ├── aside
+│   │   │   │   │       │   │   ├── Colors.jsx
+│   │   │   │   │       │   │   ├── FrequentProducts.jsx
+│   │   │   │   │       │   │   ├── Materials.jsx
+│   │   │   │   │       │   │   ├── OrderCustomization.jsx
+│   │   │   │   │       │   │   ├── Price.jsx
+│   │   │   │   │       │   │   ├── PurchaseDetails.jsx
+│   │   │   │   │       │   │   ├── Quantity.jsx
+│   │   │   │   │       │   │   └── index.jsx
+│   │   │   │   │       │   ├── feedback
+│   │   │   │   │       │   │   ├── ProductRatings.jsx
+│   │   │   │   │       │   │   ├── ProductReviews.jsx
+│   │   │   │   │       │   │   └── index.jsx
+│   │   │   │   │       │   ├── gallery
+│   │   │   │   │       │   │   ├── QRPopover.jsx
+│   │   │   │   │       │   │   └── index.jsx
+│   │   │   │   │       │   └── information
+│   │   │   │   │       │       ├── ProductDescription.jsx
+│   │   │   │   │       │       ├── ProductSpecification.jsx
+│   │   │   │   │       │       └── index.jsx
+│   │   │   │   │       ├── products
+│   │   │   │   │       │   ├── FilterDrawer.jsx
+│   │   │   │   │       │   ├── ProductTopSection.jsx
+│   │   │   │   │       │   ├── ProductsGrid.jsx
+│   │   │   │   │       │   ├── filter-panel
+│   │   │   │   │       │   │   ├── ActiveFilters.jsx
+│   │   │   │   │       │   │   ├── FilterCollapsiblePanel.jsx
+│   │   │   │   │       │   │   ├── FilterSection.jsx
+│   │   │   │   │       │   │   ├── PriceFilterSection.jsx
+│   │   │   │   │       │   │   └── index.jsx
+│   │   │   │   │       │   └── providers
+│   │   │   │   │       │       └── ProductsProvider.jsx
+│   │   │   │   │       └── wishlist
+│   │   │   │   │           ├── ProductList.jsx
+│   │   │   │   │           ├── WishlistActions.jsx
+│   │   │   │   │           └── WishlistedProduct.jsx
+│   │   │   │   ├── email
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── EmailComposeDialog.jsx
+│   │   │   │   │   │   ├── EmailComposeEditor.jsx
+│   │   │   │   │   │   └── EmailFilterDialog.jsx
+│   │   │   │   │   ├── email-details
+│   │   │   │   │   │   ├── EmailDetailsActionMenu.jsx
+│   │   │   │   │   │   ├── EmailDetailsContainer.jsx
+│   │   │   │   │   │   ├── EmailDetailsContent.jsx
+│   │   │   │   │   │   ├── EmailDetailsHeader.jsx
+│   │   │   │   │   │   ├── EmailReply.jsx
+│   │   │   │   │   │   └── SendOptionInput.jsx
+│   │   │   │   │   └── email-list
+│   │   │   │   │       ├── EmailHeader.jsx
+│   │   │   │   │       ├── EmailList.jsx
+│   │   │   │   │       ├── EmailListContainer.jsx
+│   │   │   │   │       ├── email-list-header
+│   │   │   │   │       │   ├── EmailListActionMenu.jsx
+│   │   │   │   │       │   ├── EmailListActions.jsx
+│   │   │   │   │       │   ├── EmailListHeader.jsx
+│   │   │   │   │       │   └── EmailListPagination.jsx
+│   │   │   │   │       └── email-list-item
+│   │   │   │   │           ├── EmailListItem.jsx
+│   │   │   │   │           ├── EmailListItemActions.jsx
+│   │   │   │   │           ├── EmailListItemContent.jsx
+│   │   │   │   │           └── ListItemFloatingActions.jsx
+│   │   │   │   ├── events
+│   │   │   │   │   ├── create-event
+│   │   │   │   │   │   ├── BottomBar.jsx
+│   │   │   │   │   │   ├── EventFileDropHandler.jsx
+│   │   │   │   │   │   ├── aside
+│   │   │   │   │   │   │   ├── EventAside.jsx
+│   │   │   │   │   │   │   ├── EventPrivacy.jsx
+│   │   │   │   │   │   │   └── TicketPrice.jsx
+│   │   │   │   │   │   ├── main
+│   │   │   │   │   │   │   ├── EventDayTimePicker.jsx
+│   │   │   │   │   │   │   ├── EventImageDropzone.jsx
+│   │   │   │   │   │   │   ├── EventOverview.jsx
+│   │   │   │   │   │   │   ├── EventSections.jsx
+│   │   │   │   │   │   │   └── draggable-section
+│   │   │   │   │   │   │       ├── EventInfoSection.jsx
+│   │   │   │   │   │   │       ├── EventListSection.jsx
+│   │   │   │   │   │   │       ├── EventParagraphSection.jsx
+│   │   │   │   │   │   │       └── index.jsx
+│   │   │   │   │   │   └── useCreateEventForm.jsx
+│   │   │   │   │   └── event-detail
+│   │   │   │   │       ├── EventOrganizer.jsx
+│   │   │   │   │       ├── EventTicketForm.jsx
+│   │   │   │   │       ├── EventsTabPanel.jsx
+│   │   │   │   │       ├── TicketPurchaseDrawer.jsx
+│   │   │   │   │       ├── TicketPurchaseToolbar.jsx
+│   │   │   │   │       └── main
+│   │   │   │   │           ├── EventCard.jsx
+│   │   │   │   │           ├── EventDescription.jsx
+│   │   │   │   │           ├── EventInfo.jsx
+│   │   │   │   │           ├── EventOrganizerInfo.jsx
+│   │   │   │   │           ├── EventPaymentMethod.jsx
+│   │   │   │   │           ├── EventPerformers.jsx
+│   │   │   │   │           ├── EventSchedule.jsx
+│   │   │   │   │           ├── EventShowcase.jsx
+│   │   │   │   │           └── EventTerms.jsx
+│   │   │   │   ├── file-manager
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── FMDropdownMenu.jsx
+│   │   │   │   │   │   └── helpers.jsx
+│   │   │   │   │   ├── main
+│   │   │   │   │   │   ├── FileManagerHeader.jsx
+│   │   │   │   │   │   ├── FileSelectionBar.jsx
+│   │   │   │   │   │   ├── MainContent.jsx
+│   │   │   │   │   │   ├── all-files
+│   │   │   │   │   │   │   ├── FilterAndSort.jsx
+│   │   │   │   │   │   │   ├── NoFilesFound.jsx
+│   │   │   │   │   │   │   ├── grid-view
+│   │   │   │   │   │   │   │   ├── FileGridItem.jsx
+│   │   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   │   ├── index.jsx
+│   │   │   │   │   │   │   └── list-view
+│   │   │   │   │   │   │       ├── FileRowItem.jsx
+│   │   │   │   │   │   │       └── index.jsx
+│   │   │   │   │   │   ├── create-new
+│   │   │   │   │   │   │   └── CreateNew.jsx
+│   │   │   │   │   │   ├── file-info
+│   │   │   │   │   │   │   ├── FileInfo.jsx
+│   │   │   │   │   │   │   ├── FileInfoDrawer.jsx
+│   │   │   │   │   │   │   └── sections
+│   │   │   │   │   │   │       ├── FileAccessList.jsx
+│   │   │   │   │   │   │       ├── FileActivity.jsx
+│   │   │   │   │   │   │       ├── FileInfoHeader.jsx
+│   │   │   │   │   │   │       ├── FileInfoMain.jsx
+│   │   │   │   │   │   │       ├── FileInfoMedia.jsx
+│   │   │   │   │   │   │       └── FileProperties.jsx
+│   │   │   │   │   │   ├── filter-files
+│   │   │   │   │   │   │   └── FilterFiles.jsx
+│   │   │   │   │   │   ├── recent-files
+│   │   │   │   │   │   │   ├── FileItem.jsx
+│   │   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   │   └── upload-files
+│   │   │   │   │   │       └── UploadFiles.jsx
+│   │   │   │   │   └── sidebar
+│   │   │   │   │       ├── FileManagerSidebar.jsx
+│   │   │   │   │       ├── drive-navigation
+│   │   │   │   │       │   └── DriveNavigation.jsx
+│   │   │   │   │       └── storage-info
+│   │   │   │   │           ├── StorageBar.jsx
+│   │   │   │   │           ├── StorageCTA.jsx
+│   │   │   │   │           ├── StorageInfo.jsx
+│   │   │   │   │           └── StorageSegmentList.jsx
+│   │   │   │   ├── kanban
+│   │   │   │   │   ├── boards
+│   │   │   │   │   │   ├── boards-slider
+│   │   │   │   │   │   │   ├── BoardItem.jsx
+│   │   │   │   │   │   │   ├── BoardItemMenu.jsx
+│   │   │   │   │   │   │   └── BoardsSlider.jsx
+│   │   │   │   │   │   └── page-header
+│   │   │   │   │   │       ├── KanbanBoardsHeader.jsx
+│   │   │   │   │   │       └── SortMenu.jsx
+│   │   │   │   │   ├── create-board
+│   │   │   │   │   │   ├── CreateBoardStepper.jsx
+│   │   │   │   │   │   ├── steps
+│   │   │   │   │   │   │   ├── Background
+│   │   │   │   │   │   │   │   ├── Background.jsx
+│   │   │   │   │   │   │   │   ├── BackgroundOptionItem.jsx
+│   │   │   │   │   │   │   │   ├── BackgroundOptions.jsx
+│   │   │   │   │   │   │   │   └── CustomOption.jsx
+│   │   │   │   │   │   │   ├── BasicInfo.jsx
+│   │   │   │   │   │   │   ├── ColumnStage
+│   │   │   │   │   │   │   │   ├── ColumnStage.jsx
+│   │   │   │   │   │   │   │   └── DraggableColumnItem.jsx
+│   │   │   │   │   │   │   ├── LabelInfo.jsx
+│   │   │   │   │   │   │   └── TeamInvite
+│   │   │   │   │   │   │       ├── CurrentTeamTabPanel.jsx
+│   │   │   │   │   │   │       ├── NewTeamTabPanel.jsx
+│   │   │   │   │   │   │       ├── NewTeamTable.jsx
+│   │   │   │   │   │   │       └── TeamInvite.jsx
+│   │   │   │   │   │   └── useCreateBoardStepper.jsx
+│   │   │   │   │   └── kanban
+│   │   │   │   │       ├── KanbanApp.jsx
+│   │   │   │   │       ├── KanbanElements.jsx
+│   │   │   │   │       ├── list-container
+│   │   │   │   │       │   ├── AddNewList.jsx
+│   │   │   │   │       │   ├── AddNewListDialog.jsx
+│   │   │   │   │       │   ├── ListContainer.jsx
+│   │   │   │   │       │   ├── ListContainerMenu.jsx
+│   │   │   │   │       │   ├── ListHeader.jsx
+│   │   │   │   │       │   ├── SortableListItem.jsx
+│   │   │   │   │       │   └── TaskItems.jsx
+│   │   │   │   │       ├── overlays
+│   │   │   │   │       │   ├── ListContainerOverlay.jsx
+│   │   │   │   │       │   └── TaskCardOverlay.jsx
+│   │   │   │   │       ├── page-header
+│   │   │   │   │       │   ├── BoardMembers.jsx
+│   │   │   │   │       │   ├── BoardTheme.jsx
+│   │   │   │   │       │   ├── BoardThemeOptionsDialog.jsx
+│   │   │   │   │       │   ├── HeaderMenu.jsx
+│   │   │   │   │       │   ├── InviteButton.jsx
+│   │   │   │   │       │   ├── InviteMemberDialog.jsx
+│   │   │   │   │       │   ├── KanbanHeader.jsx
+│   │   │   │   │       │   ├── MembersDialog.jsx
+│   │   │   │   │       │   └── filter-menu
+│   │   │   │   │       │       ├── Assignee.jsx
+│   │   │   │   │       │       ├── DueDate.jsx
+│   │   │   │   │       │       ├── FilterMenu.jsx
+│   │   │   │   │       │       ├── Priority.jsx
+│   │   │   │   │       │       └── Status.jsx
+│   │   │   │   │       ├── task-card
+│   │   │   │   │       │   ├── AddNewTask.jsx
+│   │   │   │   │       │   ├── AddNewTaskForm.jsx
+│   │   │   │   │       │   ├── SortableTaskItem.jsx
+│   │   │   │   │       │   └── TaskCard.jsx
+│   │   │   │   │       └── task-details
+│   │   │   │   │           ├── TaskDetails.jsx
+│   │   │   │   │           ├── TaskDetailsHeader.jsx
+│   │   │   │   │           ├── TaskSummary.jsx
+│   │   │   │   │           ├── activity
+│   │   │   │   │           │   ├── Activity.jsx
+│   │   │   │   │           │   └── ActivityItem.jsx
+│   │   │   │   │           ├── attachments
+│   │   │   │   │           │   ├── Attachment.jsx
+│   │   │   │   │           │   ├── Attachments.jsx
+│   │   │   │   │           │   └── FileUploadArea.jsx
+│   │   │   │   │           ├── check-list
+│   │   │   │   │           │   ├── CheckList.jsx
+│   │   │   │   │           │   └── CheckListItem.jsx
+│   │   │   │   │           ├── cover-image
+│   │   │   │   │           │   ├── CoverImage.jsx
+│   │   │   │   │           │   └── CoverImageMenu.jsx
+│   │   │   │   │           └── description
+│   │   │   │   │               ├── Description.jsx
+│   │   │   │   │               └── EditDescription.jsx
+│   │   │   │   ├── misc
+│   │   │   │   │   └── faq
+│   │   │   │   │       ├── FaqDrawer.jsx
+│   │   │   │   │       ├── FaqItems.jsx
+│   │   │   │   │       ├── FaqPageHeader.jsx
+│   │   │   │   │       └── faq-sidenav
+│   │   │   │   │           ├── FaqSidenav.jsx
+│   │   │   │   │           ├── SidenavItem.jsx
+│   │   │   │   │           └── SidenavItems.jsx
+│   │   │   │   ├── notification
+│   │   │   │   │   ├── NotificationActionMenu.jsx
+│   │   │   │   │   ├── NotificationList.jsx
+│   │   │   │   │   ├── NotificationListItemAvatar.jsx
+│   │   │   │   │   └── NotificationTabPanel.jsx
+│   │   │   │   ├── pricing
+│   │   │   │   │   ├── PricingHeader.jsx
+│   │   │   │   │   ├── column
+│   │   │   │   │   │   ├── PricingCard.jsx
+│   │   │   │   │   │   └── PricingCardWide.jsx
+│   │   │   │   │   └── table
+│   │   │   │   │       ├── PricingPlanCard.jsx
+│   │   │   │   │       └── PricingTableContent.jsx
+│   │   │   │   ├── scheduler
+│   │   │   │   │   ├── SchedulePanel
+│   │   │   │   │   │   ├── AppointmentConfig.jsx
+│   │   │   │   │   │   ├── AvaibilityDayRow.jsx
+│   │   │   │   │   │   ├── AvailabilityConfig.jsx
+│   │   │   │   │   │   ├── ScheduleConfig.jsx
+│   │   │   │   │   │   ├── SchedulerPanel.jsx
+│   │   │   │   │   │   ├── TimeSlotControl.jsx
+│   │   │   │   │   │   ├── useAvailiabilityConfig.js
+│   │   │   │   │   │   └── useSchedulerColors.js
+│   │   │   │   │   ├── SchedulerTop.jsx
+│   │   │   │   │   ├── SettingsDrawer.jsx
+│   │   │   │   │   └── SettingsToggle.jsx
+│   │   │   │   └── social
+│   │   │   │       ├── SocialTabs.jsx
+│   │   │   │       ├── profile-section
+│   │   │   │       │   ├── CoverBanner.jsx
+│   │   │   │       │   ├── ProfileActions.jsx
+│   │   │   │       │   └── ProfileInfo.jsx
+│   │   │   │       └── tab-panels
+│   │   │   │           ├── common
+│   │   │   │           │   ├── LoadingSkeleton.jsx
+│   │   │   │           │   └── Media.jsx
+│   │   │   │           ├── following-panel
+│   │   │   │           │   ├── Follower.jsx
+│   │   │   │           │   └── FollowingTabPanel.jsx
+│   │   │   │           ├── photos-panel
+│   │   │   │           │   └── PhotosTabPanel.jsx
+│   │   │   │           └── posts-panel
+│   │   │   │               ├── PostsTabPanel.jsx
+│   │   │   │               └── post
+│   │   │   │                   ├── CommentThread.jsx
+│   │   │   │                   ├── Post.jsx
+│   │   │   │                   ├── ReplyThread.jsx
+│   │   │   │                   ├── common
+│   │   │   │                   │   ├── content-block
+│   │   │   │                   │   │   ├── Actions.jsx
+│   │   │   │                   │   │   ├── Attachments.jsx
+│   │   │   │                   │   │   ├── AuthorInfo.jsx
+│   │   │   │                   │   │   ├── ContentBlock.jsx
+│   │   │   │                   │   │   └── TextContent.jsx
+│   │   │   │                   │   ├── thread-connector
+│   │   │   │                   │   │   └── ThreadConnector.jsx
+│   │   │   │                   │   ├── thread-input
+│   │   │   │                   │   │   └── ThreadInput.jsx
+│   │   │   │                   │   └── thread-toggle
+│   │   │   │                   │       └── ThreadToggle.jsx
+│   │   │   │                   ├── create-post
+│   │   │   │                   │   ├── AddMedia.jsx
+│   │   │   │                   │   ├── CreatePost.jsx
+│   │   │   │                   │   ├── TextInput.jsx
+│   │   │   │                   │   └── VideoCapture.jsx
+│   │   │   │                   └── share-post
+│   │   │   │                       ├── SharePostDialog.jsx
+│   │   │   │                       ├── SharePrivacy.jsx
+│   │   │   │                       └── ShareRecipientSelector.jsx
+│   │   │   ├── settings-panel
+│   │   │   │   ├── NavColorPanel.jsx
+│   │   │   │   ├── NavigationMenuPanel.jsx
+│   │   │   │   ├── SettingPanelToggler.jsx
+│   │   │   │   ├── SettingsItem.jsx
+│   │   │   │   ├── SettingsPanel.jsx
+│   │   │   │   ├── SettingsPanelRadioGroup.jsx
+│   │   │   │   ├── SidenavShapePanel.jsx
+│   │   │   │   ├── TextDirectionPanel.jsx
+│   │   │   │   ├── ThemeModeToggleTab.jsx
+│   │   │   │   └── TopnavShapePanel.jsx
+│   │   │   ├── snackbar
+│   │   │   │   ├── SnackbarCloseButton.jsx
+│   │   │   │   └── SnackbarIcon.jsx
+│   │   │   └── styled
+│   │   │       ├── OutlinedBadge.jsx
+│   │   │       ├── StyledChip.jsx
+│   │   │       ├── StyledDateCalendar.jsx
+│   │   │       ├── StyledFormControl.jsx
+│   │   │       ├── StyledSelect.jsx
+│   │   │       ├── StyledTextField.jsx
+│   │   │       └── VisuallyHiddenInput.jsx
+│   │   ├── config.js
+│   │   ├── data
+│   │   │   ├── account
+│   │   │   │   ├── account-tabs.jsx
+│   │   │   │   ├── credit-cards.js
+│   │   │   │   ├── date-time.js
+│   │   │   │   ├── language-region.js
+│   │   │   │   ├── notification-alerts.jsx
+│   │   │   │   ├── personal-info.js
+│   │   │   │   ├── privacy-protection.js
+│   │   │   │   ├── shipping-billing-address.js
+│   │   │   │   ├── storage.js
+│   │   │   │   ├── user-permissions.jsx
+│   │   │   │   └── work-education-history.js
+│   │   │   ├── analytics
+│   │   │   │   └── dashboard.jsx
+│   │   │   ├── calendar.js
+│   │   │   ├── changelogs.jsx
+│   │   │   ├── chat.js
+│   │   │   ├── colorPicker.js
+│   │   │   ├── common
+│   │   │   │   └── months.js
+│   │   │   ├── countries.js
+│   │   │   ├── crm
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── deal-details.jsx
+│   │   │   │   ├── deals.js
+│   │   │   │   └── lead-details.jsx
+│   │   │   ├── e-commerce
+│   │   │   │   ├── activities.js
+│   │   │   │   ├── cart.js
+│   │   │   │   ├── customerAccount.js
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── greetings.js
+│   │   │   │   ├── homepage.jsx
+│   │   │   │   ├── marketShare.js
+│   │   │   │   ├── orders.js
+│   │   │   │   ├── product-listing.js
+│   │   │   │   └── products.js
+│   │   │   ├── email.jsx
+│   │   │   ├── events.jsx
+│   │   │   ├── faqs.js
+│   │   │   ├── file-manager.js
+│   │   │   ├── hrm
+│   │   │   │   └── dashboard.js
+│   │   │   ├── kanban
+│   │   │   │   ├── boards.js
+│   │   │   │   ├── createBoard.js
+│   │   │   │   └── kanban.js
+│   │   │   ├── migrationlogs.jsx
+│   │   │   ├── months.js
+│   │   │   ├── notifications.jsx
+│   │   │   ├── pricing.js
+│   │   │   ├── project
+│   │   │   │   └── dashboard.js
+│   │   │   ├── search-result.js
+│   │   │   ├── social.js
+│   │   │   ├── time-tracker
+│   │   │   │   └── dashboard.js
+│   │   │   ├── users.jsx
+│   │   │   └── weeks.js
+│   │   ├── docs
+│   │   │   ├── component-docs
+│   │   │   │   ├── AccordionDoc.jsx
+│   │   │   │   ├── AlertDoc.jsx
+│   │   │   │   ├── AppBarDoc.jsx
+│   │   │   │   ├── AutocompleteDoc.jsx
+│   │   │   │   ├── AvatarDoc.jsx
+│   │   │   │   ├── BackdropDoc.jsx
+│   │   │   │   ├── BadgeDoc.jsx
+│   │   │   │   ├── BottomNavigationDoc.jsx
+│   │   │   │   ├── BoxDoc.jsx
+│   │   │   │   ├── BreadcrumbsDoc.jsx
+│   │   │   │   ├── ButtonDoc.jsx
+│   │   │   │   ├── ButtonGroupDoc.jsx
+│   │   │   │   ├── CardDoc.jsx
+│   │   │   │   ├── CheckboxDoc.jsx
+│   │   │   │   ├── ChipDoc.jsx
+│   │   │   │   ├── ContainerDoc.jsx
+│   │   │   │   ├── DataGridDoc.jsx
+│   │   │   │   ├── DateRangePickersDoc.jsx
+│   │   │   │   ├── DateTimePickersDoc.jsx
+│   │   │   │   ├── DialogDoc.jsx
+│   │   │   │   ├── DividerDoc.jsx
+│   │   │   │   ├── DrawerDoc.jsx
+│   │   │   │   ├── EditorDoc.jsx
+│   │   │   │   ├── EmojiPickerDoc.jsx
+│   │   │   │   ├── FabDoc.jsx
+│   │   │   │   ├── FileUploaderDoc.jsx
+│   │   │   │   ├── GridDoc.jsx
+│   │   │   │   ├── IconDoc.jsx
+│   │   │   │   ├── ImageListDoc.jsx
+│   │   │   │   ├── LightboxDoc.jsx
+│   │   │   │   ├── LinkDoc.jsx
+│   │   │   │   ├── ListDoc.jsx
+│   │   │   │   ├── MenuDoc.jsx
+│   │   │   │   ├── ModalDoc.jsx
+│   │   │   │   ├── PaginationDoc.jsx
+│   │   │   │   ├── PaperDoc.jsx
+│   │   │   │   ├── PopoverDoc.jsx
+│   │   │   │   ├── PopperDoc.jsx
+│   │   │   │   ├── ProgressDoc.jsx
+│   │   │   │   ├── RadioDoc.jsx
+│   │   │   │   ├── RatingDoc.jsx
+│   │   │   │   ├── ResizableDoc.jsx
+│   │   │   │   ├── ScrollbarDoc.jsx
+│   │   │   │   ├── SelectDoc.jsx
+│   │   │   │   ├── SkeletonDoc.jsx
+│   │   │   │   ├── SliderDoc.jsx
+│   │   │   │   ├── SnackbarDoc.jsx
+│   │   │   │   ├── SpeedDialDoc.jsx
+│   │   │   │   ├── StackDoc.jsx
+│   │   │   │   ├── StepperDoc.jsx
+│   │   │   │   ├── SwiperDoc.jsx
+│   │   │   │   ├── SwitchDoc.jsx
+│   │   │   │   ├── TableDoc.jsx
+│   │   │   │   ├── TabsDoc.jsx
+│   │   │   │   ├── TextfieldDoc.jsx
+│   │   │   │   ├── TimelineDoc.jsx
+│   │   │   │   ├── ToggleButtonDoc.jsx
+│   │   │   │   ├── TooltipDoc.jsx
+│   │   │   │   ├── TransferListDoc.jsx
+│   │   │   │   ├── TypographyDoc.jsx
+│   │   │   │   └── echarts
+│   │   │   │       ├── BasicRadarChart.jsx
+│   │   │   │       ├── DoughnutPieChart.jsx
+│   │   │   │       ├── EChartsDoc.jsx
+│   │   │   │       ├── GeoLocationMap.jsx
+│   │   │   │       ├── HorizontalBarChart.jsx
+│   │   │   │       ├── SimpleBarChart.jsx
+│   │   │   │       └── SimpleLineChart.jsx
+│   │   │   ├── documentation
+│   │   │   │   ├── ApiCalls.jsx
+│   │   │   │   ├── Authentication.jsx
+│   │   │   │   ├── Configuration.jsx
+│   │   │   │   ├── Dependencies.jsx
+│   │   │   │   ├── FolderStructure.jsx
+│   │   │   │   ├── GettingStarted.jsx
+│   │   │   │   ├── Introduction.jsx
+│   │   │   │   ├── Layouts.jsx
+│   │   │   │   ├── Localization.jsx
+│   │   │   │   ├── Routing.jsx
+│   │   │   │   └── Theming.jsx
+│   │   │   └── routes
+│   │   │       ├── docPaths.js
+│   │   │       ├── docRouter.jsx
+│   │   │       └── docSitemap.js
+│   │   ├── helpers
+│   │   │   ├── echart-utils.js
+│   │   │   └── gantt-utils.js
+│   │   ├── hooks
+│   │   │   ├── useCountdown.jsx
+│   │   │   ├── useHashScrollIntoView.jsx
+│   │   │   ├── useIcons.jsx
+│   │   │   ├── useImageDimensions.jsx
+│   │   │   ├── useLightbox.jsx
+│   │   │   ├── useNumberFormat.jsx
+│   │   │   ├── useSettingsPanelMountEffect.jsx
+│   │   │   ├── useThemeMode.jsx
+│   │   │   └── useToggleChartLegends.jsx
+│   │   ├── layouts
+│   │   │   ├── auth-layout
+│   │   │   │   ├── DefaultAuthLayout.jsx
+│   │   │   │   └── index.jsx
+│   │   │   ├── ecommerce-layout
+│   │   │   │   ├── EcommerceFooter.jsx
+│   │   │   │   ├── app-bar
+│   │   │   │   │   ├── PromoBanner.jsx
+│   │   │   │   │   ├── index.jsx
+│   │   │   │   │   ├── primary
+│   │   │   │   │   │   ├── CartDrawer.jsx
+│   │   │   │   │   │   ├── CartItem.jsx
+│   │   │   │   │   │   ├── CategoryPopover.jsx
+│   │   │   │   │   │   ├── ProfileMenu.jsx
+│   │   │   │   │   │   ├── SearchMenu.jsx
+│   │   │   │   │   │   └── index.jsx
+│   │   │   │   │   └── secondary
+│   │   │   │   │       ├── CollapsedMenu.jsx
+│   │   │   │   │       └── index.jsx
+│   │   │   │   └── index.jsx
+│   │   │   ├── email-layout
+│   │   │   │   ├── EmailSidebar.jsx
+│   │   │   │   ├── EmailSidebarPanel.jsx
+│   │   │   │   └── index.jsx
+│   │   │   └── main-layout
+│   │   │       ├── ComboLayout.jsx
+│   │   │       ├── MainLayout.jsx
+│   │   │       ├── NavProvider.jsx
+│   │   │       ├── SidenavLayout.jsx
+│   │   │       ├── TopnavLayout.jsx
+│   │   │       ├── app-bar
+│   │   │       │   └── index.jsx
+│   │   │       ├── common
+│   │   │       │   ├── AppbarActionItems.jsx
+│   │   │       │   ├── LanguageMenu.jsx
+│   │   │       │   ├── NotificationMenu.jsx
+│   │   │       │   ├── ProfileMenu.jsx
+│   │   │       │   ├── ThemeToggler.jsx
+│   │   │       │   └── search-box
+│   │   │       │       ├── SearchBox.jsx
+│   │   │       │       ├── SearchDialog.jsx
+│   │   │       │       ├── SearchPopover.jsx
+│   │   │       │       ├── SearchResult.jsx
+│   │   │       │       └── SearchTextField.jsx
+│   │   │       ├── footer
+│   │   │       │   └── index.jsx
+│   │   │       ├── index.jsx
+│   │   │       ├── sidenav
+│   │   │       │   ├── NavItem.jsx
+│   │   │       │   ├── NavItemPopper.jsx
+│   │   │       │   ├── SidenavDrawerContent.jsx
+│   │   │       │   ├── SidenavSimpleBar.jsx
+│   │   │       │   ├── SlimNavItem.jsx
+│   │   │       │   ├── SlimSidenav.jsx
+│   │   │       │   ├── StackedSidenav.jsx
+│   │   │       │   ├── doc-search
+│   │   │       │   │   └── DocSearch.jsx
+│   │   │       │   └── index.jsx
+│   │   │       └── topnav
+│   │   │           ├── NavItemPopover.jsx
+│   │   │           ├── TopNavStacked.jsx
+│   │   │           ├── TopnavItems.jsx
+│   │   │           ├── TopnavSlim.jsx
+│   │   │           └── index.jsx
+│   │   ├── lib
+│   │   │   ├── constants.js
+│   │   │   ├── iconifyIcons.js
+│   │   │   ├── suspenser.js
+│   │   │   └── utils.js
+│   │   ├── locales
+│   │   │   ├── i18n.js
+│   │   │   ├── langs
+│   │   │   │   ├── ar.json
+│   │   │   │   ├── bn.json
+│   │   │   │   ├── en.json
+│   │   │   │   ├── fr.json
+│   │   │   │   ├── hi.json
+│   │   │   │   └── zh.json
+│   │   │   └── languages.js
+│   │   ├── main.jsx
+│   │   ├── pages
+│   │   │   ├── apps
+│   │   │   │   ├── FileManager.jsx
+│   │   │   │   ├── Social.jsx
+│   │   │   │   ├── calendar
+│   │   │   │   │   ├── Calendar.jsx
+│   │   │   │   │   └── Scheduler.jsx
+│   │   │   │   ├── chat
+│   │   │   │   │   ├── Conversation.jsx
+│   │   │   │   │   ├── NewChat.jsx
+│   │   │   │   │   └── index.jsx
+│   │   │   │   ├── crm
+│   │   │   │   │   ├── AddContact.jsx
+│   │   │   │   │   ├── DealDetails.jsx
+│   │   │   │   │   ├── LeadDetails.jsx
+│   │   │   │   │   └── deals
+│   │   │   │   │       └── Deals.jsx
+│   │   │   │   ├── ecommerce
+│   │   │   │   │   ├── admin
+│   │   │   │   │   │   ├── CreateOrder.jsx
+│   │   │   │   │   │   ├── Invoice.jsx
+│   │   │   │   │   │   ├── InvoiceList.jsx
+│   │   │   │   │   │   ├── Order.jsx
+│   │   │   │   │   │   ├── OrderList.jsx
+│   │   │   │   │   │   ├── ProductList.jsx
+│   │   │   │   │   │   ├── ProductListing.jsx
+│   │   │   │   │   │   └── Refund.jsx
+│   │   │   │   │   └── customer
+│   │   │   │   │       ├── Cart.jsx
+│   │   │   │   │       ├── Checkout.jsx
+│   │   │   │   │       ├── CustomerAccount.jsx
+│   │   │   │   │       ├── Homepage.jsx
+│   │   │   │   │       ├── OrderConfirmation.jsx
+│   │   │   │   │       ├── OrderDetails.jsx
+│   │   │   │   │       ├── OrderList.jsx
+│   │   │   │   │       ├── OrderTrack.jsx
+│   │   │   │   │       ├── Payment.jsx
+│   │   │   │   │       ├── ProductDetails.jsx
+│   │   │   │   │       ├── Products.jsx
+│   │   │   │   │       └── Wishlist.jsx
+│   │   │   │   ├── email
+│   │   │   │   │   ├── Email.jsx
+│   │   │   │   │   └── EmailDetails.jsx
+│   │   │   │   └── kanban
+│   │   │   │       ├── Boards.jsx
+│   │   │   │       ├── CreateBoard.jsx
+│   │   │   │       ├── Kanban.jsx
+│   │   │   │       └── index.jsx
+│   │   │   ├── authentication
+│   │   │   │   └── default
+│   │   │   │       ├── LoggedOut.jsx
+│   │   │   │       ├── auth0
+│   │   │   │       │   ├── Auth0Login.jsx
+│   │   │   │       │   └── Login.jsx
+│   │   │   │       ├── firebase
+│   │   │   │       │   ├── ForgotPassword.jsx
+│   │   │   │       │   ├── Login.jsx
+│   │   │   │       │   └── Signup.jsx
+│   │   │   │       └── jwt
+│   │   │   │           ├── ForgotPassword.jsx
+│   │   │   │           ├── Login.jsx
+│   │   │   │           ├── SetPassword.jsx
+│   │   │   │           ├── Signup.jsx
+│   │   │   │           └── TwoFA.jsx
+│   │   │   ├── changelog
+│   │   │   │   ├── Logs.jsx
+│   │   │   │   └── index.jsx
+│   │   │   ├── dashboards
+│   │   │   │   ├── Analytics.jsx
+│   │   │   │   ├── CRM.jsx
+│   │   │   │   ├── ECommerce.jsx
+│   │   │   │   ├── HRM.jsx
+│   │   │   │   ├── ProjectManagement.jsx
+│   │   │   │   └── TimeTracker.jsx
+│   │   │   ├── errors
+│   │   │   │   └── Page404.jsx
+│   │   │   ├── events
+│   │   │   │   ├── CreateEvent.jsx
+│   │   │   │   └── EventDetail.jsx
+│   │   │   ├── migration
+│   │   │   │   └── index.jsx
+│   │   │   ├── misc
+│   │   │   │   └── FAQ.jsx
+│   │   │   ├── others
+│   │   │   │   ├── Account.jsx
+│   │   │   │   ├── ComingSoon.jsx
+│   │   │   │   ├── Notifications.jsx
+│   │   │   │   └── Starter.jsx
+│   │   │   └── pricing
+│   │   │       ├── PricingColumn.jsx
+│   │   │       └── PricingTable.jsx
+│   │   ├── providers
+│   │   │   ├── AccountsProvider.jsx
+│   │   │   ├── AuthProvider.jsx
+│   │   │   ├── BreakpointsProvider.jsx
+│   │   │   ├── BulkSelectProvider.jsx
+│   │   │   ├── CalendarProvider.jsx
+│   │   │   ├── ChatProvider.jsx
+│   │   │   ├── DealsProvider.jsx
+│   │   │   ├── EcommerceProvider.jsx
+│   │   │   ├── EmailProvider.jsx
+│   │   │   ├── FaqProvider.jsx
+│   │   │   ├── FileManagerProvider.jsx
+│   │   │   ├── KanbanProvider.jsx
+│   │   │   ├── NotistackProvider.jsx
+│   │   │   ├── SettingsPanelProvider.jsx
+│   │   │   ├── SettingsProvider.jsx
+│   │   │   ├── ThemeProvider.jsx
+│   │   │   └── auth-provider
+│   │   │       ├── Auth0Provider.jsx
+│   │   │       ├── AuthFirebaseProvider.jsx
+│   │   │       ├── AuthJwtProvider.jsx
+│   │   │       └── SocialAuthProvider.jsx
+│   │   ├── reducers
+│   │   │   ├── CalendarReducer.js
+│   │   │   ├── ChatReducer.js
+│   │   │   ├── DealsReducer.js
+│   │   │   ├── EmailReducer.js
+│   │   │   ├── FileManagerReducer.js
+│   │   │   ├── KanbanReducer.js
+│   │   │   └── SettingsReducer.js
+│   │   ├── routes
+│   │   │   ├── paths.js
+│   │   │   ├── router.jsx
+│   │   │   └── sitemap.js
+│   │   ├── services
+│   │   │   ├── axios
+│   │   │   │   ├── axiosFetcher.js
+│   │   │   │   └── axiosInstance.js
+│   │   │   ├── configuration
+│   │   │   │   └── SWRConfiguration.jsx
+│   │   │   ├── firebase
+│   │   │   │   └── firebase.js
+│   │   │   └── swr
+│   │   │       ├── api-hooks
+│   │   │       │   ├── useAuthApi.js
+│   │   │       │   └── useProductApi.js
+│   │   │       └── dummyFetcher.js
+│   │   └── theme
+│   │       ├── RTLMode.jsx
+│   │       ├── components
+│   │       │   ├── Accordion.jsx
+│   │       │   ├── Alert.jsx
+│   │       │   ├── AppBar.jsx
+│   │       │   ├── Autocomplete.jsx
+│   │       │   ├── Avatar.jsx
+│   │       │   ├── Backdrop.jsx
+│   │       │   ├── Breadcrumbs.jsx
+│   │       │   ├── Button.jsx
+│   │       │   ├── ButtonGroup.jsx
+│   │       │   ├── Checkbox.jsx
+│   │       │   ├── Chip.jsx
+│   │       │   ├── CssBaseline.jsx
+│   │       │   ├── DataGrid.jsx
+│   │       │   ├── Dialog.jsx
+│   │       │   ├── Divider.jsx
+│   │       │   ├── Drawer.jsx
+│   │       │   ├── Fab.jsx
+│   │       │   ├── ImageList.jsx
+│   │       │   ├── Link.jsx
+│   │       │   ├── List.jsx
+│   │       │   ├── Menu.jsx
+│   │       │   ├── Pagination.jsx
+│   │       │   ├── Paper.jsx
+│   │       │   ├── Popover.jsx
+│   │       │   ├── Popper.jsx
+│   │       │   ├── Progress.jsx
+│   │       │   ├── Radio.jsx
+│   │       │   ├── Rating.jsx
+│   │       │   ├── Select.jsx
+│   │       │   ├── Stack.jsx
+│   │       │   ├── Stepper.jsx
+│   │       │   ├── Switch.jsx
+│   │       │   ├── Tab.jsx
+│   │       │   ├── Table.jsx
+│   │       │   ├── TablePagination.jsx
+│   │       │   ├── ToggleButton.jsx
+│   │       │   ├── Toolbar.jsx
+│   │       │   ├── Tooltip.jsx
+│   │       │   ├── Typography.jsx
+│   │       │   ├── pickers
+│   │       │   │   ├── date
+│   │       │   │   │   ├── DateCalendar.jsx
+│   │       │   │   │   ├── DateField.jsx
+│   │       │   │   │   ├── DatePicker.jsx
+│   │       │   │   │   ├── DesktopDatePicker.jsx
+│   │       │   │   │   ├── MobileDatePicker.jsx
+│   │       │   │   │   └── StaticDatePicker.jsx
+│   │       │   │   ├── date-time
+│   │       │   │   │   ├── DateTimePicker.jsx
+│   │       │   │   │   ├── DesktopDateTimePicker.jsx
+│   │       │   │   │   ├── MobileDateTimePicker.jsx
+│   │       │   │   │   └── StaticDateTimePicker.jsx
+│   │       │   │   └── time
+│   │       │   │       ├── DesktopTimePicker.jsx
+│   │       │   │       ├── MobileTimePicker.jsx
+│   │       │   │       ├── MultiSectionDigitalClock.jsx
+│   │       │   │       ├── StaticTimePicker.jsx
+│   │       │   │       ├── TimeClock.jsx
+│   │       │   │       └── TimePicker.jsx
+│   │       │   └── text-fields
+│   │       │       ├── FilledInput.jsx
+│   │       │       ├── FormControl.jsx
+│   │       │       ├── FormControlLabel.jsx
+│   │       │       ├── FormHelperText.jsx
+│   │       │       ├── Input.jsx
+│   │       │       ├── InputAdornment.jsx
+│   │       │       ├── InputLabel.jsx
+│   │       │       ├── OutlinedInput.jsx
+│   │       │       └── TextField.jsx
+│   │       ├── mixins.js
+│   │       ├── palette
+│   │       │   ├── colors.js
+│   │       │   ├── darkPalette.js
+│   │       │   ├── index.js
+│   │       │   └── lightPalette.js
+│   │       ├── shadows.js
+│   │       ├── styles
+│   │       │   ├── colorPicker.js
+│   │       │   ├── echart.js
+│   │       │   ├── emojiMart.js
+│   │       │   ├── keyFrames.js
+│   │       │   ├── notistack.js
+│   │       │   ├── popper.js
+│   │       │   ├── prism.js
+│   │       │   ├── projectTimelineChart.js
+│   │       │   ├── react-fc.js
+│   │       │   ├── reactDatepicker.js
+│   │       │   ├── scrollbar.js
+│   │       │   ├── simplebar.js
+│   │       │   ├── svelteGanttChart.js
+│   │       │   ├── swiper.js
+│   │       │   ├── taskTrackChart.js
+│   │       │   ├── transitions.js
+│   │       │   ├── vibrantNav.jsx
+│   │       │   └── yarl.js
+│   │       ├── sxConfig.js
+│   │       ├── theme.js
+│   │       └── typography.js
+│   └── vite.config.js
+├── nom_du_fichier.txt
+├── plan_directeur.txt
+└── requirements.txt
+
+389 directories, 1573 files

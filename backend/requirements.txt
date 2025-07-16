@@ -9,3 +9,6 @@ psycopg2-binary==2.9.9
 
 # Pour charger les variables d'environnement depuis un fichier .env (utile pour la configuration)
 python-dotenv==1.0.1
+
+# Pour l'authentification par Token JWT
+djangorestframework-simplejwt==5.3.1
