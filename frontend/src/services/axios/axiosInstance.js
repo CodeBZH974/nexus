@@ -25,7 +25,11 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
     // Si l'erreur est une 401 et que ce n'est pas une tentative de rafraîchissement de token
     // et qu'on n'a pas déjà essayé de rafraîchir le token pour cette requête
-    if (error.response?.status === 401 && !originalRequest.url.endsWith('/token/refresh/') && !originalRequest._retry) {
+    if (
+      error.response?.status === 401 &&
+      !originalRequest.url.endsWith('/token/refresh/') &&
+      !originalRequest._retry
+    ) {
       originalRequest._retry = true;
       try {
         // Tentative de rafraîchissement du token
@@ -57,7 +61,7 @@ axiosInstance.interceptors.response.use(
       status: error.response?.status,
       data: error.response?.data || error.message,
     });
-  }
+  },
 );
 
 export default axiosInstance;

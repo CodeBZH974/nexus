@@ -1,11 +1,4 @@
 import Grid from '@mui/material/Grid';
-import {
-  deadlineMetrics,
-  projectHours,
-  projectTimelineData,
-  taskMetrics,
-  upcomingMeetings,
-} from 'src/data/project/dashboard';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import Events from 'src/components/sections/dashboards/project/events/Events';
 import HoursCompleted from 'src/components/sections/dashboards/project/hours-completed/HoursCompleted';
@@ -14,6 +7,12 @@ import ProjectDeadlines from 'src/components/sections/dashboards/project/project
 import ProjectTimeline from 'src/components/sections/dashboards/project/project-timeline/ProjectTimeline';
 import ScheduleMeeting from 'src/components/sections/dashboards/project/schedule-meeting/ScheduleMeeting';
 import TaskSummary from 'src/components/sections/dashboards/project/task-summary/TaskSummary';
+import {
+  projectHours,
+  projectTimelineData,
+  taskMetrics,
+  upcomingMeetings,
+} from 'src/data/project/dashboard';
 import { useProjects } from 'src/services/swr/api-hooks/useProjectApi';
 
 const ProjectManagement = () => {
@@ -42,7 +41,7 @@ const ProjectManagement = () => {
         </Grid>
 
         <Grid size={{ xs: 12, sm: 6, lg: 5, xl: 3 }}>
-          <ProjectDeadlines deadlineMetrics={deadlineMetrics} />
+          <ProjectDeadlines deadlineMetrics={[]} />
         </Grid>
 
         <Grid size={{ xs: 12, lg: 7, xl: 9 }} order={{ sm: 1, lg: 0 }}>

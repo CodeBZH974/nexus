@@ -8,13 +8,13 @@ import DefaultAuthLayout from 'layouts/auth-layout/DefaultAuthLayout';
 import EcommerceLayout from 'layouts/ecommerce-layout';
 import MainLayout from 'layouts/main-layout';
 import Page404 from 'pages/errors/Page404';
+import AuthGuard from 'components/guards/AuthGuard';
+import GuestGuard from 'components/guards/GuestGuard';
 import PageLoader from 'components/loading/PageLoader';
 import AllFiles from 'components/sections/file-manager/main/all-files';
 import RecentFiles from 'components/sections/file-manager/main/recent-files';
 import paths, { rootPaths } from './paths';
 
-// import AuthGurad from 'components/guard/AuthGuard';
-// import GuestGurad from 'components/guard/GuestGurad';
 // import Splash from 'components/loading/Splash';
 
 const LoggedOut = lazy(() => import('pages/authentication/default/LoggedOut'));
@@ -119,13 +119,11 @@ export const routes = [
       {
         path: '/',
         element: (
-          // Uncomment the following line to activate the AuthGuard for protected routes
-
-          // <AuthGurad>
-          <MainLayout>
-            <SuspenseOutlet />
-          </MainLayout>
-          // </AuthGurad>
+          <AuthGuard>
+            <MainLayout>
+              <SuspenseOutlet />
+            </MainLayout>
+          </AuthGuard>
         ),
         children: [
           {
@@ -442,11 +440,9 @@ export const routes = [
       {
         path: rootPaths.authRoot,
         element: (
-          // Uncomment the following line to activate the GuestGurad for guest routes
-
-          // <GuestGurad>
-          <AuthLayout />
-          // </GuestGurad>
+          <GuestGuard>
+            <AuthLayout />
+          </GuestGuard>
         ),
         children: [
           {
