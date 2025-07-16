@@ -23,7 +23,7 @@ services:
     volumes:
       - ./frontend:/app # Monte le code source pour le rechargement à chaud
       - /app/node_modules # Astuce pour éviter que le node_modules local n'écrase celui du conteneur
-    command: npm run dev -- --host # Démarre le serveur Vite et l'expose à l'extérieur du conteneur
+    command: npm run dev -- --host --port 5173 # Force Vite à utiliser le port 5173
     depends_on:
       - backend # S'assure que le backend est lancé avant le frontend
 

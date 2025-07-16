@@ -20,9 +20,10 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from projects.views import current_user
+from projects.views import current_user, api_root
 
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
     path('api/', include('projects.urls')),
     path('api/me/', current_user, name='me'),

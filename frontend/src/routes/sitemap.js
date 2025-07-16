@@ -8,7 +8,6 @@ const sitemap = [
     items: [
       {
         name: 'Dashboard',
-        key: 'dashboard',
         path: rootPaths.root,
         pathName: 'dashboard',
         icon: 'material-symbols:space-dashboard-outline-rounded',
@@ -16,28 +15,13 @@ const sitemap = [
       },
       {
         name: 'Email',
-        icon: 'material-symbols:mail-outline-rounded',
         path: paths.email,
+        icon: 'material-symbols:mail-outline-rounded',
       },
       {
         name: 'Kanban',
-        icon: 'material-symbols:view-kanban-outline-rounded',
         path: paths.kanban,
-      },
-      {
-        name: 'Chat',
-        path: paths.chat,
-        icon: 'material-symbols:chat-bubble-outline-rounded',
-      },
-      {
-        name: 'Social',
-        path: paths.social,
-        icon: 'material-symbols:account-box-outline',
-      },
-      {
-        name: 'File manager',
-        path: paths.fileManager,
-        icon: 'material-symbols:folder-outline-rounded',
+        icon: 'material-symbols:view-kanban-outline-rounded',
       },
       {
         name: 'Calendar',
@@ -50,16 +34,7 @@ const sitemap = [
     id: 'pages',
     subheader: 'Pages',
     key: 'pages',
-    icon: 'material-symbols:view-quilt-outline',
     items: [
-      {
-        name: 'Starter',
-        key: 'starter',
-        path: paths.starter,
-        pathName: 'starter',
-        icon: 'material-symbols:play-circle-outline-rounded',
-        active: true,
-      },
       {
         name: 'Notifications',
         key: 'notifications',
@@ -113,20 +88,6 @@ const sitemap = [
             active: true,
           },
           {
-            name: 'Forgot password',
-            key: 'forgot_password',
-            path: paths.defaultJwtForgotPassword,
-            pathName: 'forgot-password',
-            active: true,
-          },
-          {
-            name: '2FA',
-            key: '2FA',
-            path: paths.defaultJwt2FA,
-            pathName: '2FA',
-            active: true,
-          },
-          {
             name: 'Set password',
             key: 'set_password',
             path: paths.defaultJwtSetPassword,
@@ -149,15 +110,7 @@ const sitemap = [
     id: 'misc',
     subheader: 'Misc',
     key: 'misc',
-    icon: 'material-symbols:dashboard-customize-outline-rounded',
     items: [
-      {
-        name: 'Landing',
-        key: 'landing',
-        path: paths.comingSoon,
-        pathName: 'landing',
-        icon: 'material-symbols:flight-land-rounded',
-      },
       {
         name: 'Account',
         key: 'account',
@@ -165,131 +118,6 @@ const sitemap = [
         pathName: 'account',
         active: true,
         icon: 'material-symbols:admin-panel-settings-outline-rounded',
-        new: true,
-      },
-      {
-        name: 'Pricing',
-        key: 'pricing',
-        pathName: 'pricing',
-        active: true,
-        icon: 'material-symbols:sell-outline',
-        hasNew: true,
-        items: [
-          {
-            name: 'Pricing column',
-            key: 'pricing_column',
-            path: paths.pricingColumn,
-            pathName: 'pricing-column',
-            active: true,
-          },
-          {
-            name: 'Pricing table',
-            key: 'pricing_table',
-            path: paths.pricingTable,
-            pathName: 'pricing-table',
-            active: true,
-            new: true,
-          },
-        ],
-      },
-      {
-        name: 'FAQ',
-        key: 'faq',
-        path: paths.faq,
-        pathName: 'faq',
-        selectionPrefix: 'faq',
-        icon: 'material-symbols:question-mark-rounded',
-        active: true,
-      },
-      {
-        name: 'Multi level',
-        key: 'multi_level',
-        pathName: 'multi-level',
-        icon: 'material-symbols:layers-outline-rounded',
-        active: true,
-        items: [
-          {
-            name: 'Level two (1)',
-            key: 'level_two_1',
-            path: '#!',
-            pathName: 'multi-level-2',
-            active: true,
-          },
-          {
-            name: 'Level two (2)',
-            key: 'level_two_2',
-            pathName: 'multi-level-3',
-            active: true,
-            items: [
-              {
-                name: 'Level three (1)',
-                key: 'level_three_1',
-                path: '#!',
-                pathName: 'multi-level-item-3',
-                active: true,
-              },
-              {
-                name: 'Level three (2)',
-                key: 'level_three_2',
-                path: '#!',
-                pathName: 'multi-level-item-4',
-                active: true,
-              },
-            ],
-          },
-          {
-            name: 'Level two (3)',
-            key: 'level_two_3',
-            pathName: 'multi-level-4',
-            active: true,
-            items: [
-              {
-                name: 'Level three (3)',
-                key: 'level_three_3',
-                path: '#!',
-                pathName: 'multi-level-item-6',
-                active: true,
-              },
-              {
-                name: 'Level three (4)',
-                key: 'level_three_4',
-                pathName: 'multi-level-item-7',
-                active: true,
-                items: [
-                  {
-                    name: 'Level four (1)',
-                    key: 'level_four_1',
-                    path: '#!',
-                    pathName: 'multi-level-item-8',
-                    active: true,
-                  },
-                  {
-                    name: 'Level four (2)',
-                    key: 'level_four_2',
-                    pathName: 'multi-level-item-9',
-                    active: true,
-                    items: [
-                      {
-                        name: 'Level five (1)',
-                        key: 'level_five_1',
-                        path: '#!',
-                        pathName: 'multi-level-item-10',
-                        active: true,
-                      },
-                      {
-                        name: 'Level five (2)',
-                        key: 'level_five_2',
-                        path: '#!',
-                        pathName: 'multi-level-item-11',
-                        active: true,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
       },
     ],
   },

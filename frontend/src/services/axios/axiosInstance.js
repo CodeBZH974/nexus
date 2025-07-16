@@ -49,7 +49,7 @@ axiosInstance.interceptors.response.use(
         }
         // Si le refresh échoue, on est probablement déconnecté, on lance une erreur
         throw new Error('Refresh token invalid');
-      } catch (refreshError) {
+      } catch (unusedError) {
         // En cas d'échec du refresh (token invalide, etc.), on déconnecte l'utilisateur
         localStorage.removeItem('auth_token');
         localStorage.removeItem('refresh_token');

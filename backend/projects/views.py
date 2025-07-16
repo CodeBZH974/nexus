@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -5,6 +6,12 @@ from .models import Project, ProjectPhase, Task
 from .serializers import ProjectSerializer, ProjectPhaseSerializer, TaskSerializer, UserSerializer
 
 # Create your views here.
+
+def api_root(request):
+    """
+    A simple root view for the API to confirm it's running.
+    """
+    return JsonResponse({'message': 'Welcome to the NexusFlow API!'})
 
 class ProjectViewSet(viewsets.ModelViewSet):
     """API endpoint that allows projects to be viewed or edited."""

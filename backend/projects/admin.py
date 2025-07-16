@@ -7,11 +7,11 @@ from .models import (
     TaskCompletionHistory,
 )
 
+
 class ProjectPhaseInline(admin.TabularInline):
     model = ProjectPhase
     extra = 1  # Affiche 1 formulaire vide par défaut pour ajouter une nouvelle phase
     ordering = ('order',)
-
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):

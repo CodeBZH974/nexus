@@ -1,6 +1,3 @@
-// frontend/src/components/Logo.js
-
-import React from 'react';
 import { Box } from '@mui/material';
 
 const Logo = () => (
@@ -13,17 +10,52 @@ const Logo = () => (
         </linearGradient>
       </defs>
       <g transform="translate(5, 15)">
-        <text x="0" y="35" fontFamily="Montserrat, sans-serif" fontSize="30" fontWeight="bold" fill="#1A3A6D" style={{ fontVariant: 'small-caps' }}>
+        <text
+          x="0"
+          y="35"
+          fontFamily="Montserrat, sans-serif"
+          fontSize="30"
+          fontWeight="bold"
+          fill="#1A3A6D"
+          style={{ fontVariant: 'small-caps' }}
+        >
           Ne
         </text>
         <g transform="translate(45, 5)">
-          <path d="M0 30 Q15 15, 30 0" stroke="#1A3A6D" strokeWidth="8" fill="none" strokeLinecap="round" />
-          <path d="M0 0 Q15 15, 30 30" stroke="url(#logoGradient)" strokeWidth="8" fill="none" strokeLinecap="round" />
+          <path
+            d="M0 30 Q15 15, 30 0"
+            stroke="#1A3A6D"
+            strokeWidth="8"
+            fill="none"
+            strokeLinecap="round"
+          />
+          <path
+            d="M0 0 Q15 15, 30 30"
+            stroke="url(#logoGradient)"
+            strokeWidth="8"
+            fill="none"
+            strokeLinecap="round"
+          />
         </g>
-        <text x="80" y="35" fontFamily="Montserrat, sans-serif" fontSize="30" fontWeight="bold" fill="#1A3A6D" style={{ fontVariant: 'small-caps' }}>
+        <text
+          x="80"
+          y="35"
+          fontFamily="Montserrat, sans-serif"
+          fontSize="30"
+          fontWeight="bold"
+          fill="#1A3A6D"
+          style={{ fontVariant: 'small-caps' }}
+        >
           us
         </text>
-        <text x="125" y="35" fontFamily="Montserrat, sans-serif" fontSize="30" fontWeight="bold" fill="#4A5568">
+        <text
+          x="125"
+          y="35"
+          fontFamily="Montserrat, sans-serif"
+          fontSize="30"
+          fontWeight="bold"
+          fill="#4A5568"
+        >
           Flow
         </text>
       </g>
