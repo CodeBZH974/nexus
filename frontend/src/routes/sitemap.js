@@ -1,4 +1,3 @@
-import docSitemap from 'docs/routes/docSitemap';
 import paths, { rootPaths } from './paths';
 
 const sitemap = [
@@ -121,7 +120,6 @@ const sitemap = [
       },
     ],
   },
-  ...docSitemap,
 ];
 
 export default sitemap;

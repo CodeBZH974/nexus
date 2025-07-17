@@ -8,12 +8,19 @@ services:
       - ./backend:/app  # Monte le dossier local ./backend dans le /app du conteneur pour le rechargement automatique du code
     environment:
       - DB_NAME=nexusflow_db
+      - SECRET_KEY='django-insecure-=yoursecretkeyhere!@#$qwer'
       - DB_USER=nexusflow_user
       - DB_PASSWORD=nexusflow_pass
       - DB_HOST=db
     command: /app/entrypoint.sh # Utilise notre script de démarrage pour appliquer les migrations
     depends_on:
-      - db  # Indique que le service backend dépend du service db et doit attendre qu'il soit prêt
+
+      - db  # Indique que le service backend dépend du service db et doit attendre qu'il soit prêt    
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
   
   # NOUVEAU: Service de l'application Frontend React
   frontend:
@@ -30,8 +37,11 @@ services:
   # Service de la base de données PostgreSQL
   db:
     image: postgres:15-alpine # Utilise une image officielle et légère de PostgreSQL
+    container_name: nexus_db
     volumes:
       - postgres_data:/var/lib/postgresql/data/ # Crée un volume pour rendre les données persistantes
+    env_file:
+      - ./.env.dev
     environment:
       - POSTGRES_DB=nexusflow_db
       - POSTGRES_USER=nexusflow_user
@@ -40,4 +50,5 @@ services:
       - "5432:5432" # Utile si vous souhaitez vous connecter à la BDD avec un outil externe
 
 volumes:
-  postgres_data: # Déclare le volume pour la persistance des données
+  postgres_data:
+    driver: local # Déclare le volume pour la persistance des données

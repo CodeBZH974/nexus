@@ -1,13 +1,13 @@
 import { Suspense, lazy } from 'react';
-import { Outlet, createBrowserRouter } from 'react-router';
+import { Navigate, Outlet, createBrowserRouter } from 'react-router';
 import { useLocation } from 'react-router';
 import App from 'App';
-import { docRoutes } from 'docs/routes/docRouter';
 import AuthLayout from 'layouts/auth-layout';
 import DefaultAuthLayout from 'layouts/auth-layout/DefaultAuthLayout';
+import MainLayout from 'layouts/main-layout';
 import Page404 from 'pages/errors/Page404';
-import AuthGuard from 'components/guards/AuthGuard';
-import GuestGuard from 'components/guards/GuestGuard';
+import AuthGuard from 'components/guard/AuthGuard';
+import GuestGuard from 'components/guard/GuestGuard';
 import PageLoader from 'components/loading/PageLoader';
 import AllFiles from 'components/sections/file-manager/main/all-files';
 import RecentFiles from 'components/sections/file-manager/main/recent-files';
@@ -22,7 +22,6 @@ const Notifications = lazy(() => import('pages/others/Notifications'));
 const EventsDetail = lazy(() => import('pages/events/EventDetail'));
 const CreateEvent = lazy(() => import('pages/events/CreateEvent'));
 const Login = lazy(() => import('pages/authentication/default/jwt/Login'));
-const Signup = lazy(() => import('pages/authentication/default/jwt/Signup'));
 const SetPassword = lazy(() => import('pages/authentication/default/jwt/SetPassword'));
 
 const Kanban = lazy(() => import('pages/apps/kanban'));
@@ -78,6 +77,7 @@ export const routes = [
           </AuthGuard>
         ),
         children: [
+          // ... other routes
           {
             index: true,
             element: <ProjectManagement />,
@@ -205,9 +205,13 @@ export const routes = [
               },
             ],
           },
-
-          ...docRoutes,
         ],
+      },
+      {
+        // Add an errorElement to the root route or specific routes
+        // to catch errors during routing or rendering.
+        // Replace ErrorBoundary with your custom error component.
+        errorElement: <ErrorBoundary />,  
       },
       {
         path: rootPaths.authRoot,
@@ -232,29 +236,8 @@ export const routes = [
                     element: <Login />,
                   },
                   {
-                    path: paths.defaultJwtSignup,
-                    element: <Signup />,
-                  },
-                  {
                     path: paths.defaultJwtSetPassword,
                     element: <SetPassword />,
-                  },
-                ],
-              },
-              {
-                path: rootPaths.authDefaultFirebaseRoot,
-                children: [
-                  {
-                    path: paths.defaultFirebaseLogin,
-                    element: <FirebaseLogin />,
-                  },
-                  {
-                    path: paths.defaultFirebaseSignup,
-                    element: <FirebaseSignup />,
-                  },
-                  {
-                    path: paths.defaultFirebaseForgotPassword,
-                    element: <FirebaseForgotPassword />,
                   },
                 ],
               },

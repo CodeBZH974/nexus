@@ -1,11 +1,15 @@
-import { Navigate } from 'react-router';
-import { useAuth } from 'providers/AuthProvider';
+import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import paths from 'routes/paths';
+import AuthContext from 'context/AuthContext';
+import PageLoader from 'components/loading/PageLoader';
 
-const AuthGurad = ({ children }) => {
-  const { sessionUser } = useAuth();
+const AuthGuard = ({ children }) => {
+  const location = useLocation();
+  const { user, loading } = useContext(AuthContext);
 
-  return sessionUser ? children : <Navigate to={paths.defaultJwtLogin} />;
+  if (loading) return <PageLoader />;
+  return user ? children : <Navigate to={paths.defaultJwtLogin} state={{ from: location }} replace />;
 };
 
-export default AuthGurad;
+export default AuthGuard;

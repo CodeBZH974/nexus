@@ -1,60 +1,28 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import {
   Alert,
   Box,
   Button,
-  Checkbox,
   Divider,
-  FormControlLabel,
   Link,
   Stack,
   TextField,
   Typography,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import * as yup from 'yup';
 import PasswordTextField from 'components/common/PasswordTextField';
-import DefaultCredentialAlert from '../common/DefaultCredentialAlert';
-import ViewOnlyAlert from '../common/ViewOnlyAlert';
 import SocialAuth from './SocialAuth';
 
-const schema = yup
-  .object({
-    email: yup
-      .string()
-      .email('Please provide a valid email address.')
-      .required('This field is required'),
-    password: yup.string().required('This field is required'),
-  })
-  .required();
-
 const LoginForm = ({
-  provider = 'jwt',
-  handleLogin,
+  control,
+  handleSubmit,
+  onSubmit,
+  errors,
+  isSubmitting,
+  serverError,
   signUpLink,
   forgotPasswordLink,
   socialAuth = true,
-  rememberDevice = true,
-  defaultCredential,
 }) => {
-  const {
-    register,
-    handleSubmit,
-    setError,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = async (data) => {
-    await handleLogin(data).catch((error) => {
-      if (error) {
-        setError('root.credential', { type: 'manual', message: error.message });
-      }
-    });
-  };
-
   return (
     <Stack
       direction="column"
@@ -77,13 +45,6 @@ const LoginForm = ({
           mb: 5,
         }}
       >
-        {provider === 'firebase' && import.meta.env.VITE_BUILD_MODE === 'production' && (
-          <Grid size={12} sx={{ mb: 1 }}>
-            <ViewOnlyAlert
-              docLink={`https://aurora.themewagon.com/documentation/authentication#firebase`}
-            />
-          </Grid>
-        )}
         <Grid size={12}>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -120,12 +81,7 @@ const LoginForm = ({
 
         <Grid size={12}>
           <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)}>
-            {errors.root?.credential?.message && (
-              <Alert severity="error" sx={{ mb: 3 }}>
-                {errors.root?.credential?.message}
-              </Alert>
-            )}
-            {defaultCredential && <DefaultCredentialAlert />}
+            {serverError && <Alert severity="error" sx={{ mb: 3 }}>{serverError}</Alert>}
             <Grid container>
               <Grid
                 sx={{
@@ -136,13 +92,11 @@ const LoginForm = ({
                 <TextField
                   fullWidth
                   size="large"
-                  id="email"
-                  type="email"
-                  label="Email"
-                  defaultValue={defaultCredential?.email}
-                  error={!!errors.email}
-                  helperText={<>{errors.email?.message}</>}
-                  {...register('email')}
+                  id="username"
+                  label="Username"
+                  error={!!errors.username}
+                  helperText={<>{errors.username?.message}</>}
+                  {...control.register('username')}
                 />
               </Grid>
               <Grid
@@ -156,10 +110,9 @@ const LoginForm = ({
                   size="large"
                   id="password"
                   label="Password"
-                  defaultValue={defaultCredential?.password}
                   error={!!errors.password}
                   helperText={<>{errors.password?.message}</>}
-                  {...register('password')}
+                  {...control.register('password')}
                 />
               </Grid>
               <Grid
@@ -175,22 +128,6 @@ const LoginForm = ({
                     alignItems: 'center',
                   }}
                 >
-                  {rememberDevice && (
-                    <FormControlLabel
-                      control={<Checkbox name="checked" color="primary" size="small" />}
-                      label={
-                        <Typography
-                          variant="subtitle2"
-                          sx={{
-                            color: 'text.secondary',
-                          }}
-                        >
-                          Remember this device
-                        </Typography>
-                      }
-                    />
-                  )}
-
                   {forgotPasswordLink && (
                     <Link href={forgotPasswordLink} variant="subtitle2">
                       Forgot Password?
@@ -204,7 +141,7 @@ const LoginForm = ({
                   type="submit"
                   size="large"
                   variant="contained"
-                  loading={isSubmitting}
+                  disabled={isSubmitting}
                 >
                   Log in
                 </Button>

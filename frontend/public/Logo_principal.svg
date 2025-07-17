@@ -1,0 +1,21 @@
+<svg width="150" height="60" viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="logoGradientV8" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1A3A6D;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#00C49A;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <g transform="translate(0, 15)">
+        <!-- "NE" en petites majuscules, aligné à droite pour un espacement précis -->
+        <text x="55" y="35" font-family="Montserrat, sans-serif" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant: small-caps;" text-anchor="end">Ne</text>
+        
+        <!-- "x" stylisé, positionné au centre -->
+        <g transform="translate(60, 5)">
+            <path d="M0 30 Q15 15, 30 0" stroke="#1A3A6D" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <path d="M0 0 Q15 15, 30 30" stroke="url(#logoGradientV8)" stroke-width="8" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <!-- "US" en petites majuscules, aligné à gauche pour un espacement précis -->
+        <text x="95" y="35" font-family="Montserrat, sans-serif" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant: small-caps;" text-anchor="start">us</text>
+    </g>
+</svg>

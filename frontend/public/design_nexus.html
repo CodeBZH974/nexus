@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Charte Graphique & Système de Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #F9FAFB;
+            color: #454F5B;
+        }
+        h1, h2, h3, h4, h5, h6, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+            color: #1A3A6D;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .swatch {
+            width: 100%;
+            padding-top: 100%;
+            border-radius: 0.75rem;
+        }
+        .gradient-border {
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box, linear-gradient(to right, #1A3A6D, #00C49A) border-box;
+        }
+        .pulse-orange {
+            box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
+            animation: pulse-orange 2s infinite;
+        }
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+        }
+        .gantt-bar {
+            position: relative;
+            height: 2rem;
+            border-radius: 0.5rem;
+            background-color: #00C49A;
+        }
+        .gantt-bar-predictive {
+            background: linear-gradient(90deg, #00C49A, rgba(0, 196, 154, 0.3));
+        }
+        .gantt-bar-critical {
+            background: linear-gradient(90deg, #FFA500, #FF4842);
+            box-shadow: 0 0 12px rgba(255, 165, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-700">
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- En-tête -->
+        <header class="text-center my-12">
+            <div class="inline-block">
+                <svg width="200" height="80" viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="logoGradientHeader" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#1A3A6D;stop-opacity:1" /><stop offset="100%" style="stop-color:#00C49A;stop-opacity:1" /></linearGradient></defs>
+                    <g transform="translate(0, 15)">
+                        <text x="55" y="35" font-family="Montserrat, sans-serif" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant: small-caps;" text-anchor="end">Ne</text>
+                        <g transform="translate(60, 5)"><path d="M0 30 Q15 15, 30 0" stroke="#1A3A6D" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M0 0 Q15 15, 30 30" stroke="url(#logoGradientHeader)" stroke-width="8" fill="none" stroke-linecap="round"/></g>
+                        <text x="95" y="35" font-family="Montserrat, sans-serif" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant: small-caps;" text-anchor="start">us</text>
+                    </g>
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#1A3A6D] -mt-4">Système de Design</h1>
+            <p class="text-lg text-gray-500 mt-2">Le guide de référence pour construire une expérience utilisateur cohérente et exceptionnelle.</p>
+        </header>
+
+        <!-- 1. Fondamentaux -->
+        <section class="section-card">
+            <h2 class="text-3xl font-bold mb-6 border-b pb-4">1. Fondamentaux</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Logo & Palette</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded-xl flex justify-center items-center"><svg width="120" height="50" viewBox="0 0 150 60"><g transform="translate(0, 15)"><text x="55" y="35" font-family="Montserrat" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant:small-caps" text-anchor="end">Ne</text><g transform="translate(60, 5)"><path d="M0 30 Q15 15, 30 0" stroke="#1A3A6D" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M0 0 Q15 15, 30 30" stroke="url(#logoGradientHeader)" stroke-width="8" fill="none" stroke-linecap="round"/></g><text x="95" y="35" font-family="Montserrat" font-size="30" font-weight="bold" fill="#1A3A6D" style="font-variant:small-caps" text-anchor="start">us</text></g></svg></div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="swatch" style="background-color: #1A3A6D;"></div>
+                            <div class="swatch" style="background-color: #00C49A;"></div>
+                            <div class="swatch" style="background-color: #FFA500;"></div>
+                            <div class="swatch" style="background-color: #FF4842;"></div>
+                            <div class="swatch" style="background-color: #F0F2F5; border: 1px solid #ddd;"></div>
+                            <div class="swatch" style="background-color: #FFFFFF; border: 1px solid #ddd;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Typographie</h3>
+                    <div class="space-y-4">
+                        <h1 class="text-4xl font-bold text-gray-800">Montserrat pour les titres</h1>
+                        <p class="text-base">Lato pour le corps de texte. Lisible, clair et professionnel, il assure un confort de lecture optimal pour toutes les descriptions et contenus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Composants Uniques -->
+        <section class="section-card">
+            <h2 class="text-3xl font-bold mb-6 border-b pb-4">2. Composants Uniques "Nexus"</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hub de Projet -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold">Le Hub de Projet</h3>
+                    <div class="p-6 bg-gray-50 rounded-2xl flex justify-center items-center">
+                        <div class="relative w-40 h-40">
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="4"/><circle cx="50" cy="50" r="45" fill="none" stroke="#00C49A" stroke-width="4" stroke-dasharray="282.7" stroke-dashoffset="70.6" transform="rotate(-90 50 50)"/></svg>
+                            <div class="absolute inset-0 flex flex-col justify-center items-center"><p class="text-xs text-gray-500">Santé Projet</p><p class="text-4xl font-bold text-[#1A3A6D]">75%</p><span class="mt-1 text-xs font-semibold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Optimal</span></div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-center">Vision immédiate de la santé et de l'avancement.</p>
+                </div>
+                <!-- Carte de Tâche Intelligente -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold">La Tâche Intelligente</h3>
+                    <div class="p-5 rounded-2xl space-y-3 bg-white shadow-lg">
+                        <div class="flex justify-between items-center"><p class="font-semibold text-gray-800">Rapport de budget Q3</p><span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-full">Haute</span></div>
+                        <div class="flex items-center text-sm text-gray-500"><svg class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg><span>Échéance : Demain</span></div>
+                        <div class="!mt-4 p-3 rounded-lg bg-gradient-to-r from-[#1A3A6D]/5 to-[#00C49A]/5 border-l-4 border-[#1A3A6D]">
+                            <p class="text-xs font-bold text-[#1A3A6D] mb-1">Analyse IA</p>
+                            <p class="text-sm text-gray-700">Risque de retard détecté. Suggérer une aide de Chloé Girard.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-center">Recommandations de l'IA intégrées à la tâche.</p>
+                </div>
+                <!-- Chronologie Prédictive -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold">Chronologie Prédictive</h3>
+                    <div class="p-5 rounded-2xl space-y-4 bg-gray-50">
+                        <div class="relative pl-8"><div class="absolute left-2 top-1 h-full border-l-2 border-dashed border-gray-300"></div><div class="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-[#00C49A]"></div><p class="font-semibold">Phase 1 : Design</p><p class="text-xs text-gray-500">Terminée, <span class="font-bold text-green-600">2j d'avance</span></p></div>
+                        <div class="relative pl-8"><div class="absolute left-2 top-1 h-full border-l-2 border-dashed border-gray-300"></div><div class="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-[#FFA500] pulse-orange"></div><p class="font-semibold">Phase 2 : API</p><p class="text-xs text-gray-500">En cours, prédiction de <span class="font-bold text-orange-600">1j de retard</span></p></div>
+                        <div class="relative pl-8"><div class="absolute left-0 top-1.5 h-4 w-4 rounded-full bg-gray-300"></div><p class="font-semibold text-gray-500">Phase 3 : UI</p><p class="text-xs text-gray-500">À venir</p></div>
+                    </div>
+                    <p class="text-sm text-center">Visualisation des prédictions et des écarts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Vues Intelligentes -->
+        <section class="section-card">
+            <h2 class="text-3xl font-bold mb-6 border-b pb-4">3. Vues Intelligentes Nexus</h2>
+            <div class="space-y-12">
+                <!-- Flowboard (Kanban) -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Le Flowboard</h3>
+                    <p class="mb-6 max-w-3xl">Plus qu'un Kanban, le Flowboard est une vue dynamique qui matérialise les flux. Les colonnes affichent des insights de l'IA et les dépendances entre les tâches sont visualisées par des connecteurs animés, révélant le "nexus" du projet.</p>
+                    <div class="bg-gray-50 p-6 rounded-2xl overflow-x-auto">
+                        <div class="flex space-x-6 min-w-max">
+                            <!-- Colonne -->
+                            <div class="w-80 bg-white rounded-xl p-4 space-y-4"><div class="flex justify-between items-center"><h4 class="font-bold">À faire (12)</h4><span class="text-xs text-gray-500">Flux optimal</span></div><!-- Tâches... --></div>
+                            <!-- Colonne avec insight IA -->
+                            <div class="w-80 bg-white rounded-xl p-4 space-y-4 border-2 border-orange-400"><div class="flex justify-between items-center"><h4 class="font-bold">En cours (4)</h4><span class="text-xs font-bold text-orange-600">Goulot d'étranglement</span></div>
+                                <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-red-500"><p class="font-semibold text-sm">Rapport de budget Q3</p><p class="text-xs text-gray-500 mt-1">Échéance : Demain</p></div>
+                                <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-yellow-500"><p class="font-semibold text-sm">Valider maquettes V2</p><p class="text-xs text-gray-500 mt-1">Échéance : 20/07</p></div>
+                            </div>
+                            <!-- Colonne -->
+                            <div class="w-80 bg-white rounded-xl p-4 space-y-4"><div class="flex justify-between items-center"><h4 class="font-bold">Terminé (34)</h4><span class="text-xs font-bold text-green-600">+5 cette semaine</span></div><!-- Tâches... --></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Predictive Timeline (Gantt) -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">La Timeline Prédictive</h3>
+                    <p class="mb-6 max-w-3xl">Le diagramme de Gantt réinventé. Les barres des tâches futures sont en dégradé pour représenter l'incertitude des prédictions. Le chemin critique, identifié par l'IA, est mis en évidence par une lueur pour une attention immédiate.</p>
+                    <div class="bg-gray-50 p-6 rounded-2xl space-y-4">
+                        <!-- Tâche Gantt -->
+                        <div class="grid grid-cols-3 gap-4 items-center"><p class="font-semibold text-sm">Design UI/UX</p><div class="col-span-2 gantt-bar" style="width: 40%; margin-left: 5%;"></div></div>
+                        <!-- Tâche Gantt Critique -->
+                        <div class="grid grid-cols-3 gap-4 items-center"><p class="font-semibold text-sm">Développement API</p><div class="col-span-2 gantt-bar gantt-bar-critical" style="width: 60%; margin-left: 25%;"></div></div>
+                        <!-- Tâche Gantt Prédictive -->
+                        <div class="grid grid-cols-3 gap-4 items-center"><p class="font-semibold text-sm">Intégration Frontend</p><div class="col-span-2 gantt-bar gantt-bar-predictive" style="width: 50%; margin-left: 50%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Agenda Focal -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">L'Agenda Focal</h3>
+                    <p class="mb-6 max-w-3xl">Fusion de la liste de tâches et du calendrier. La vue "Aujourd'hui" est une liste de tâches organisée par l'IA pour un impact maximal. L'utilisateur peut glisser-déposer des tâches dans son agenda, avec des suggestions de créneaux optimaux.</p>
+                    <div class="bg-gray-50 p-6 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="md:col-span-1">
+                            <h4 class="font-bold mb-4">Calendrier</h4>
+                            <div class="bg-white p-4 rounded-xl text-center"><p class="font-semibold">Juillet 2025</p><!-- Mini calendrier --></div>
+                            <h4 class="font-bold mt-6 mb-2">Backlog</h4>
+                            <div class="p-3 bg-white rounded-lg shadow-sm"><p class="text-sm">Préparer la réunion de lancement</p></div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <h4 class="font-bold mb-4">Aujourd'hui : Mercredi 16 Juillet</h4>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-xl bg-white shadow-lg gradient-border"><p class="font-semibold">10:00 - 11:00 : Finaliser le rapport</p><p class="text-xs text-gray-500">Suggestion IA : Période de haute concentration</p></div>
+                                <div class="p-4 rounded-xl bg-white shadow-lg"><p class="font-semibold">11:00 - 12:00 : Réunion équipe marketing</p></div>
+                                <div class="p-4 rounded-xl bg-white shadow-lg"><p class="font-semibold">14:00 - 15:00 : Valider maquettes V2</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

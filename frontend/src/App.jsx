@@ -2,12 +2,12 @@ import { useEffect, useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import useIcons from 'hooks/useIcons';
 import { useThemeMode } from 'hooks/useThemeMode';
-import AuthProvider from 'providers/AuthProvider';
+import { AuthProvider } from 'context/AuthContext';
 import { useSettingsContext } from 'providers/SettingsProvider';
 import { REFRESH } from 'reducers/SettingsReducer';
 import SettingPanelToggler from 'components/settings-panel/SettingPanelToggler';
 import SettingsPanel from 'components/settings-panel/SettingsPanel';
-
+import React from 'react';
 const App = () => {
   const { pathname } = useLocation();
   const { mode } = useThemeMode();

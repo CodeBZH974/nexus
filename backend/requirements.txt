@@ -12,3 +12,6 @@ python-dotenv==1.0.1
 
 # Pour l'authentification par Token JWT
 djangorestframework-simplejwt==5.3.1
+
+# Pour la gestion des requêtes Cross-Origin (CORS)
+django-cors-headers==4.3.1

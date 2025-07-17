@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // Configuration de l'URL de base pour l'environnement de développement et de production
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://backend:8000/api/';
+// Le code frontend s'exécute dans le NAVIGATEUR, pas dans le conteneur Docker.
+// Il doit donc appeler l'adresse de la machine hôte (localhost) sur le port que Docker expose pour le backend.
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -9,9 +11,14 @@ const axiosInstance = axios.create({
 
 // Intercepteur de requête : ajoute le token d'authentification aux requêtes
 axiosInstance.interceptors.request.use(async (config) => {
-  const authToken = localStorage.getItem('auth_token');
-  if (authToken) {
-    config.headers.Authorization = `Bearer ${authToken}`;
+  const tokenString = localStorage.getItem('auth_token');
+  if (tokenString) {
+    try {
+      const token = JSON.parse(tokenString);
+      config.headers.Authorization = `Bearer ${token.access}`;
+    } catch (e) {
+      console.error('Failed to parse auth token from localStorage', e);
+    }
   }
   return config;
 });
@@ -23,7 +30,7 @@ axiosInstance.interceptors.response.use(
   },
   async (error) => {
     const originalRequest = error.config;
-    // Si l'erreur est une 401 et que ce n'est pas une tentative de rafraîchissement de token
+    // Si l'erreur est une 401 et que ce n'est pas une tentative de rafraîchissement du token
     // et qu'on n'a pas déjà essayé de rafraîchir le token pour cette requête
     if (
       error.response?.status === 401 &&
@@ -32,29 +39,30 @@ axiosInstance.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       try {
-        // Tentative de rafraîchissement du token
-        const refreshToken = localStorage.getItem('refresh_token');
-        if (refreshToken) {
-          const refreshResponse = await axiosInstance.post('/token/refresh/', {
-            refresh: refreshToken,
-          });
-          if (refreshResponse.status === 200) {
-            // Mettre à jour les tokens dans le localStorage
-            localStorage.setItem('auth_token', refreshResponse.data.access);
-            localStorage.setItem('refresh_token', refreshResponse.data.refresh);
-            // Ajouter le nouveau token à l'en-tête de la requête initiale et la relancer
-            axios.defaults.headers.common.Authorization = `Bearer ${refreshResponse.data.access}`;
-            return axiosInstance(originalRequest);
-          }
+        const tokenString = localStorage.getItem('auth_token');
+        if (!tokenString) throw new Error('No auth token found in localStorage');
+
+        const refreshToken = JSON.parse(tokenString).refresh;
+        if (!refreshToken) {
+          throw new Error('No refresh token available');
         }
-        // Si le refresh échoue, on est probablement déconnecté, on lance une erreur
-        throw new Error('Refresh token invalid');
-      } catch (unusedError) {
-        // En cas d'échec du refresh (token invalide, etc.), on déconnecte l'utilisateur
+
+        // On utilise directement l'instance axios de base pour éviter une boucle d'intercepteurs.
+        const response = await axios.post(`${BASE_URL}token/refresh/`, { refresh: refreshToken });
+
+        const { access } = response.data;
+        localStorage.setItem('auth_token', JSON.stringify({ access, refresh: refreshToken }));
+
+        // On met à jour l'en-tête de la requête originale et on la relance.
+        originalRequest.headers['Authorization'] = `Bearer ${access}`;
+
+        return axiosInstance(originalRequest);
+      } catch (refreshError) {
+        console.error('Token refresh failed:', refreshError);
         localStorage.removeItem('auth_token');
-        localStorage.removeItem('refresh_token');
-        // On pourrait aussi rediriger vers la page de connexion ici
-        // window.location.href = '/login';
+        // La redirection sera gérée par le contexte et les guards, on ne force plus ici.
+        // window.location.href = '/auth/default/login';
+        return Promise.reject(refreshError);
       }
     }
     return Promise.reject({

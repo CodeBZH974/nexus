@@ -20,17 +20,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@1_l*%-0b5w+o*_juwky+xj@-ovp4x@65kie-6_^^qtcjs(twu'
+# Lit la clé secrète depuis les variables d'environnement
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# Lit le mode DEBUG
+DEBUG = os.environ.get('DEBUG') == '1'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# En développement, nous devons autoriser l'hôte que le navigateur utilise (localhost)
+# et le nom de service utilisé par Docker (backend) pour les communications internes.
+# Le '*' est une solution de facilité pour le développement, mais ne doit pas être utilisé en production.
+# Pour la sécurité, il est préférable d'être explicite.
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',  # Ajout de l'application CORS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +57,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Ajout du middleware CORS
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,10 +94,10 @@ WSGI_APPLICATION = 'nexusflow_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',  # Important: 'db' est le nom du service dans docker-compose.yml
         'PORT': '5432',
     }
 }
@@ -127,6 +138,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# --- Configuration CORS ---
+# Cette liste contient les domaines autorisés à faire des requêtes cross-origin.
+# Pour le développement, nous autorisons notre serveur de développement Vite.
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # L'URL de votre frontend React/Vite
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
