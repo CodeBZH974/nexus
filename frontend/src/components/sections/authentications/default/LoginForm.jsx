@@ -20,8 +20,7 @@ const LoginForm = ({
   isSubmitting,
   serverError,
   signUpLink,
-  forgotPasswordLink,
-  socialAuth = true,
+  forgotPasswordLink
 }) => {
   return (
     <Stack
@@ -68,16 +67,6 @@ const LoginForm = ({
             </Typography>
           </Stack>
         </Grid>
-        {socialAuth && (
-          <>
-            <Grid size={12}>
-              <SocialAuth />
-            </Grid>
-            <Grid size={12}>
-              <Divider sx={{ color: 'text.secondary' }}>or use email</Divider>
-            </Grid>
-          </>
-        )}
 
         <Grid size={12}>
           <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)}>

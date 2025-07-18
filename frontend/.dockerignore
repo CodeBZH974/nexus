@@ -1,0 +1,9 @@
+# Ignore node_modules, as they will be installed inside the container.
+node_modules
+
+# Ignore build artifacts
+dist
+
+# Ignore local environment files and logs
+.env*
+npm-debug.log

@@ -32,3 +32,6 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
+# Ajouter l'URL pour la déconnexion
+from projects.views import LogoutView
+urlpatterns.append(path('api/logout/', LogoutView.as_view(), name='logout'))

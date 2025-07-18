@@ -82,10 +82,14 @@ const ApiCalls = () => {
               </Typography>
               <CodeBlock
                 code={`axiosInstance.interceptors.request.use(async (config) => {
-  const authToken = localStorage.getItem('auth_token');
-
-  if (authToken) {
-    config.headers.Authorization = \`Bearer \${authToken}\`;
+  const tokenString = localStorage.getItem('auth_token');
+  if (tokenString) {
+    try {
+      const token = JSON.parse(tokenString);
+      config.headers.Authorization = \`Bearer \${token.access}\`;
+    } catch (e) {
+      console.error('Failed to parse auth token from localStorage', e);
+    }
   }
   return config;
 });`}
@@ -101,16 +105,13 @@ const ApiCalls = () => {
                 Handles responses by returning the <Code>data</Code> property or handling errors by
                 rejecting the promise with the status and error message.
               </Typography>
-              <CodeBlock
-                sx={{ mb: 0 }}
-                code={`axiosInstance.interceptors.response.use(
-  (response) => (response.data.data ? response.data.data : response.data),
-  (error) => {
-    return Promise.reject({
-      status: error.response?.status,
-      data: error.response?.data || error.message,
-    });
-  },
+              <CodeBlock sx={{ mb: 0 }} code={`axiosInstance.interceptors.response.use(
+  // On success, the interceptor returns the full 'data' object from the response.
+  (response) => response.data,
+
+  // On error, the interceptor re-throws the original Axios error object.
+  // This preserves the full error context for better debugging.
+  (error) => Promise.reject(error),
 );`}
               />
             </ListItemText>

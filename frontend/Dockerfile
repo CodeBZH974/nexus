@@ -1,20 +1,20 @@
-# Étape 1: Utiliser une image Node.js officielle comme base
-# 'lts-alpine' est une version légère et stable, parfaite pour le développement
-FROM node:lts-alpine
+# Stage 1: Use a specific, lightweight version of Node.js based on Alpine Linux
+FROM node:18-alpine AS development
 
-# Étape 2: Définir le répertoire de travail dans le conteneur
+# Install `curl` which is required for the healthcheck in docker-compose.yml
+# --no-cache avoids storing the apk index, keeping the image smaller.
+RUN apk add --no-cache curl
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Étape 3: Copier les fichiers de dépendances et installer
-# On copie d'abord package.json pour profiter de la mise en cache de Docker
+# Copy package.json and package-lock.json to leverage Docker cache
 COPY package*.json ./
+
+# Install project dependencies
 RUN npm install
 
-# Étape 4: Copier le reste du code de l'application
+# Copy the rest of the application source code into the container
 COPY . .
 
-# Étape 5: Exposer le port par défaut de Vite
-EXPOSE 5173
-
-# Étape 6: Définir la commande pour lancer le serveur de développement
-CMD ["npm", "run", "dev"]
+# The command to run the development server will be provided by docker-compose.yml

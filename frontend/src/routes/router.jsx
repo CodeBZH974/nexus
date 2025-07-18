@@ -6,6 +6,7 @@ import AuthLayout from 'layouts/auth-layout';
 import DefaultAuthLayout from 'layouts/auth-layout/DefaultAuthLayout';
 import MainLayout from 'layouts/main-layout';
 import Page404 from 'pages/errors/Page404';
+import ErrorBoundary from 'components/ErrorBoundary';
 import AuthGuard from 'components/guard/AuthGuard';
 import GuestGuard from 'components/guard/GuestGuard';
 import PageLoader from 'components/loading/PageLoader';
@@ -211,7 +212,7 @@ export const routes = [
         // Add an errorElement to the root route or specific routes
         // to catch errors during routing or rendering.
         // Replace ErrorBoundary with your custom error component.
-        errorElement: <ErrorBoundary />,  
+        errorElement: <ErrorBoundary />,
       },
       {
         path: rootPaths.authRoot,

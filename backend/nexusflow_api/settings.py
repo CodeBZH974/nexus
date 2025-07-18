@@ -26,10 +26,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # Lit le mode DEBUG
 DEBUG = os.environ.get('DEBUG') == '1'
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 # En développement, nous devons autoriser l'hôte que le navigateur utilise (localhost)
 # et le nom de service utilisé par Docker (backend) pour les communications internes.
 # Le '*' est une solution de facilité pour le développement, mais ne doit pas être utilisé en production.
@@ -142,7 +138,7 @@ STATIC_URL = 'static/'
 # Cette liste contient les domaines autorisés à faire des requêtes cross-origin.
 # Pour le développement, nous autorisons notre serveur de développement Vite.
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # L'URL de votre frontend React/Vite
+    'http://localhost:5173', # Assurez-vous que cette URL correspond bien à celle de votre frontend
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -1,38 +1,44 @@
+version: "3.9"
 services:
   # Service de l'application Backend Django
   backend:
+    image: my-backend-image
     build: ./backend  # Indique à Compose de construire l'image à partir du Dockerfile dans le dossier ./backend
     ports:
       - "8000:8000"  # Lie le port 8000 du conteneur au port 8000 de votre machine locale
     volumes:
       - ./backend:/app  # Monte le dossier local ./backend dans le /app du conteneur pour le rechargement automatique du code
-    environment:
-      - DB_NAME=nexusflow_db
-      - SECRET_KEY='django-insecure-=yoursecretkeyhere!@#$qwer'
-      - DB_USER=nexusflow_user
-      - DB_PASSWORD=nexusflow_pass
-      - DB_HOST=db
-    command: /app/entrypoint.sh # Utilise notre script de démarrage pour appliquer les migrations
-    depends_on:
-
-      - db  # Indique que le service backend dépend du service db et doit attendre qu'il soit prêt    
+    env_file:
+      - ./.env.dev  # Utilise le fichier .env.dev
+    container_name: nexus_backend
+    # La commande est simplifiée. Le script entrypoint.sh gère déjà le lancement du serveur.
+    command: /app/entrypoint.sh
+    depends_on: # Attend que le service soit non seulement démarré, mais en bonne santé
+      db:
+        condition: service_healthy
     healthcheck:
+      # Teste si l'API de base répond, indiquant que le serveur est prêt.
       test: ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 3
   
-  # NOUVEAU: Service de l'application Frontend React
+  # Service de l'application Frontend React
   frontend:
+    image: my-frontend-image
     build: ./frontend # Construit à partir du Dockerfile dans ./frontend
     ports:
-      - "5173:5173" # Expose le port de Vite sur votre machine
+      # Correction : On mappe le port 5173 de l'hôte au port 5173 du conteneur,
+      # qui est le port utilisé par le serveur de développement Vite.
+      - "5173:5173"
     volumes:
       - ./frontend:/app # Monte le code source pour le rechargement à chaud
       - /app/node_modules # Astuce pour éviter que le node_modules local n'écrase celui du conteneur
-    command: npm run dev -- --host --port 5173 # Force Vite à utiliser le port 5173
-    depends_on:
-      - backend # S'assure que le backend est lancé avant le frontend
+    command: npm run dev -- --host # Le port 5173 est le port par défaut de Vite, pas besoin de le forcer.
+    container_name: nexus_frontend
+    depends_on: # Attend que le backend soit en bonne santé avant de démarrer
+      backend:
+        condition: service_healthy
 
   # Service de la base de données PostgreSQL
   db:
@@ -42,12 +48,15 @@ services:
       - postgres_data:/var/lib/postgresql/data/ # Crée un volume pour rendre les données persistantes
     env_file:
       - ./.env.dev
-    environment:
-      - POSTGRES_DB=nexusflow_db
-      - POSTGRES_USER=nexusflow_user
-      - POSTGRES_PASSWORD=nexusflow_pass
     ports:
       - "5432:5432" # Utile si vous souhaitez vous connecter à la BDD avec un outil externe
+    healthcheck:
+      # pg_isready est un utilitaire PostgreSQL pour vérifier l'état de la connexion.
+      # Les '$$' sont nécessaires pour que la variable soit interprétée par le shell du conteneur.
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:

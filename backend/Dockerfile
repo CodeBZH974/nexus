@@ -1,19 +1,21 @@
-# 1. Utiliser une image Python officielle comme image de base
-# python:3.11-slim est une version légère et optimisée
+# Use a specific, lightweight version of Python
 FROM python:3.11-slim
 
-# 2. Définir des variables d'environnement
-# Empêche Python de mettre en mémoire tampon les sorties, ce qui facilite le débogage dans les logs Docker
-ENV PYTHONUNBUFFERED 1
+# Install `curl` for the healthcheck and `libpq-dev` for psycopg2
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    libpq-dev \
+    # gcc is needed to build some python packages
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
 
-# 3. Définir le répertoire de travail dans le conteneur
+# Set environment variables for python for optimal container performance
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
-# 4. Copier et installer les dépendances
-# On copie d'abord requirements.txt pour profiter de la mise en cache de Docker.
-# Docker ne réinstallera les dépendances que si ce fichier change.
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. Copier le reste du code de l'application
 COPY . .
