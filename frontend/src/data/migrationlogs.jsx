@@ -40,8 +40,7 @@ export const migrationlog = [
         { text: 'src/providers/NotistackProvider.tsx' },
         { text: 'src/providers/SettingsProvider.tsx' },
         { text: 'src/providers/ThemeProvider.tsx' },
-        { text: 'src/providers/auth-provider/Auth0Provider.tsx' },
-        { text: 'src/providers/auth-provider/AuthFirebaseProvider.tsx' },
+        
         { text: 'src/providers/auth-provider/AuthJwtProvider.tsx' },
         { text: 'src/components/styled/StyledDateCalendar.tsx' },
         { text: 'src/components/styled/StyledSelect.tsx' },

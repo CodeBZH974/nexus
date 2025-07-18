@@ -49,7 +49,7 @@ const structureCode = `
 │   ├── services                  # Handles API integrations and configurations
 │   │   ├── axios                 # Axios-related configurations and utilities
 │   │   ├── configuration         # Configuration settings for data fetching library(SWR)
-│   │   ├── firebase              # Firebase service initialization and configuration
+
 │   │   └── swr                   # SWR (stale-while-revalidate) related utilities and hooks
 │   │       ├── api-hooks         # Custom hooks for API calls using SWR
 │   │       ├── ...

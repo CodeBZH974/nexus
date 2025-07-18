@@ -84,7 +84,7 @@ const Introduction = () => {
       <DocSection title="Authentication">
         <Typography sx={{ color: 'text.secondary' }}>
           Aurora supports multiple authentication methods, including <Code>JWT</Code>,{' '}
-          <Code>Firebase</Code>, <Code>Auth0</Code>, and <Code>Social Platform Authentication</Code>
+          
           , allowing flexibility and secure access management.
         </Typography>
       </DocSection>

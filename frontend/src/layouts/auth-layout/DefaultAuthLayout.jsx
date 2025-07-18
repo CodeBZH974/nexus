@@ -9,8 +9,7 @@ import { cssVarRgba, getItemFromStore } from 'lib/utils';
 import Lottie from 'lottie-react';
 import paths from 'routes/paths';
 import Logo from 'components/common/Logo';
-import Auth0Icon from 'components/icons/Auth0Icon';
-import FirebaseIcon from 'components/icons/FirebaseIcon';
+
 import JwtIcon from 'components/icons/JwtIcon';
 import DefaultLoader from 'components/loading/DefaultLoader';
 
@@ -18,8 +17,7 @@ const DefaultAuthLayout = ({ children }) => {
   const storedProvider = getItemFromStore('auth_provider');
   const { isDark } = useThemeMode();
   const jwtMatch = useMatch('/authentication/default/jwt/:page');
-  const auth0Match = useMatch('/authentication/default/auth0/:page');
-  const firebaseMatch = useMatch('/authentication/default/firebase/:page');
+  
   const [value, setValue] = useState(storedProvider || 'jwt');
 
   const handleChange = (_event, newValue) => {
@@ -30,12 +28,7 @@ const DefaultAuthLayout = ({ children }) => {
     if (jwtMatch) {
       setValue('jwt');
     }
-    if (auth0Match) {
-      setValue('auth0');
-    }
-    if (firebaseMatch) {
-      setValue('firebase');
-    }
+    
   }, []);
 
   return (
@@ -118,28 +111,7 @@ const DefaultAuthLayout = ({ children }) => {
                 disableRipple
                 sx={{ px: 1.75 }}
               />
-              <Tab
-                component={Link}
-                underline="none"
-                href={paths.defaultAuth0Login}
-                value="auth0"
-                label="Auth 0"
-                icon={<Auth0Icon />}
-                iconPosition="start"
-                disableRipple
-                sx={{ px: 1.75 }}
-              />
-              <Tab
-                component={Link}
-                underline="none"
-                href={paths.defaultFirebaseLogin}
-                value="firebase"
-                label="Firebase"
-                icon={<FirebaseIcon />}
-                iconPosition="start"
-                disableRipple
-                sx={{ px: 1.75 }}
-              />
+              
             </Tabs>
           </Stack>
         </Stack>

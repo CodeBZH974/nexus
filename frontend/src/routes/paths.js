@@ -8,8 +8,7 @@ export const rootPaths = {
   authRoot: 'authentication',
   pricingRoot: 'pricing',
   authDefaultJwtRoot: 'default/jwt',
-  authDefaultFirebaseRoot: 'default/firebase',
-  authDefaultAuth0Root: 'default/auth0',
+  
   errorRoot: 'error',
   ecommerceRoot: 'ecommerce',
   ecommerceAdminRoot: 'admin',
@@ -39,11 +38,7 @@ const paths = {
   defaultJwt2FA: `/${rootPaths.authRoot}/${rootPaths.authDefaultJwtRoot}/2FA`,
   defaultJwtSetPassword: `/${rootPaths.authRoot}/${rootPaths.authDefaultJwtRoot}/set-password`,
 
-  defaultAuth0Login: `/${rootPaths.authRoot}/${rootPaths.authDefaultAuth0Root}/login`,
-
-  defaultFirebaseLogin: `/${rootPaths.authRoot}/${rootPaths.authDefaultFirebaseRoot}/login`,
-  defaultFirebaseSignup: `/${rootPaths.authRoot}/${rootPaths.authDefaultFirebaseRoot}/sign-up`,
-  defaultFirebaseForgotPassword: `/${rootPaths.authRoot}/${rootPaths.authDefaultFirebaseRoot}/forgot-password`,
+  
 
   defaultLoggedOut: `/${rootPaths.authRoot}/default/logged-out`,
   pricingColumn: `/${rootPaths.pricingRoot}/column`,
@@ -116,12 +111,7 @@ export const authPaths = {
   forgotPassword: paths.defaultJwtForgotPassword,
   setNewPassword: paths.defaultJwtSetPassword,
   twoFactorAuth: paths.defaultJwt2FA,
-  /* ---------------------------------Firebase----------------------------------------- */
-  // login: paths.defaultFirebaseLogin,
-  // signup: paths.defaultFirebaseSignup,
-  // forgotPassword: paths.defaultFirebaseForgotPassword,
-  /* ---------------------------------Auth0----------------------------------------- */
-  // login: paths.defaultAuth0Login,
+  
 };
 
 export const apiEndpoints = {
